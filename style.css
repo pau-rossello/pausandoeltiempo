@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Merriweather:wght@300;400&display=swap');
+
+:root {
+    --bg-color: #FFFFFF;
+    --text-color: #2D2D2D;
+    --divider-color: #E5E7EB;
+    --accent-color: #F3F4F6;
+}
+
+body {
+    font-family: 'Merriweather', serif;
+    color: var(--text-color);
+    background-color: var(--bg-color);
+    overflow-x: hidden;
+}
+
+h1, h2, h3, h4, .font-heading {
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* Custom Masonry Grid using CSS Columns */
+.masonry-grid {
+    column-count: 1;
+    column-gap: 1.5rem;
+}
+
+@media (min-width: 640px) {
+    .masonry-grid {
+        column-count: 2;
+    }
+}
+
+@media (min-width: 1024px) {
+    .masonry-grid {
+        column-count: 3;
+    }
+}
+
+.masonry-item {
+    break-inside: avoid;
+    margin-bottom: 1.5rem;
+}
+
+/* Transitions & Animations */
+@keyframes slow-zoom {
+    0% { transform: scale(1); }
+    100% { transform: scale(1.1); }
+}
+
+.animate-slow-zoom {
+    animation: slow-zoom 20s ease-in-out infinite alternate;
+}
+
+.fade-in {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 1.2s cubic-bezier(0.2, 0.8, 0.2, 1), transform 1.2s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Hover Effects */
+.hover-scale {
+    transition: transform 0.4s ease;
+}
+
+.hover-scale:hover {
+    transform: scale(1.02);
+}
+
+/* Sticky Header Backdrop */
+.header-scrolled {
+    background-color: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+/* Lightbox Styles */
+#lightbox {
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.95);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    cursor: crosshair; /* Indicate that clicking background closes or interacts */
+}
+
+#lightbox img {
+    max-width: 90%;
+    max-height: 90%;
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.8);
+    transition: transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+    cursor: zoom-in;
+    object-fit: contain;
+}
+
+#lightbox img.zoomed {
+    transform: scale(1.5);
+    cursor: zoom-out;
+}
+.logo-carousel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4rem;
+    height: 120px;
+}
+
+.logo-item {
+    transition: all 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
+    filter: grayscale(0%) opacity(0.5); /* Muted by default */
+    transform: scale(0.9);
+    flex-shrink: 0;
+}
+
+/* Default state: center is slightly larger but same color */
+.logo-item.active {
+    transform: scale(1.15);
+    filter: grayscale(0%) opacity(0.5);
+}
+
+/* When hovering the carousel, all items reset to base scale... */
+.logo-carousel:hover .logo-item {
+    transform: scale(0.9);
+    filter: grayscale(0%) opacity(0.4);
+}
+
+/* ...except the one being hovered, which stands out */
+.logo-carousel .logo-item:hover {
+    transform: scale(1.15) !important;
+    filter: grayscale(0%) opacity(1) !important;
+}
