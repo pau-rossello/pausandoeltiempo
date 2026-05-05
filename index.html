@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pausando el Tiempo | Portfolio Audiovisual</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <!-- GSAP & ScrollTrigger -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: { 'zen-dark': '#2D2D2D', 'zen-light': '#FFFFFF', 'zen-grey': '#E5E7EB' },
+                    fontFamily: { sans: ['Montserrat', 'sans-serif'], serif: ['Merriweather', 'serif'] }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="bg-white text-zen-dark antialiased">
+
+    <!-- Header -->
+    <header id="main-header"
+        class="fixed top-0 left-0 w-full z-50 transition-all duration-500 px-6 py-4 md:px-12 md:py-6 bg-transparent">
+        <div class="max-w-7xl mx-auto flex justify-between items-center border-b border-white/20 pb-4 transition-all duration-500"
+            id="header-container">
+            <a href="index.html" class="flex items-center">
+                <img src="images/logo_white.png" alt="Pausando el Tiempo"
+                    class="h-8 md:h-10 transition-all duration-500" id="header-logo">
+            </a>
+            <nav class="hidden md:flex items-center space-x-8 text-[10px] uppercase tracking-[0.2em] font-sans font-bold text-white transition-all duration-500"
+                id="header-nav">
+                <a href="index.html" class="text-gray-900 border-b border-black">Inicio</a>
+                <a href="fotografia.html" class="hover:text-gray-400 transition-colors">Fotografía</a>
+                <a href="videografia.html" class="hover:text-gray-400 transition-colors">Videografía</a>
+                <a href="sobre-mi.html" class="hover:text-gray-400 transition-colors">Sobre mí</a>
+                <a href="contacto.html" class="hover:text-gray-400 transition-colors">Contacto</a>
+            </nav>
+            <button id="menu-toggle" class="md:hidden p-2"><svg class="w-6 h-6" fill="none" stroke="currentColor"
+                    viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7">
+                    </path>
+                </svg></button>
+        </div>
+    </header>
+
+    <!-- Mobile Nav -->
+    <div id="mobile-nav"
+        class="fixed inset-0 bg-white z-[60] flex flex-col items-center justify-center space-y-8 text-lg uppercase tracking-widest font-sans transition-transform duration-500 translate-x-full">
+        <button id="menu-close" class="absolute top-6 right-6 p-2"><svg class="w-8 h-8" fill="none"
+                stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+            </svg></button>
+        <a href="index.html">Inicio</a>
+        <a href="fotografia.html">Fotografía</a>
+        <a href="videografia.html">Videografía</a>
+        <a href="sobre-mi.html">Sobre mí</a>
+        <a href="contacto.html">Contacto</a>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="relative h-screen w-full overflow-hidden bg-black">
+        <!-- Background Image -->
+        <img src="images/hero_banner.jpg" alt="Hero Banner"
+            class="absolute inset-0 w-full h-full object-cover opacity-40 scale-105 animate-slow-zoom">
+        <div class="absolute inset-0 bg-black/20"></div>
+
+        <!-- Hero Content -->
+        <div class="relative z-10 h-full flex flex-col items-center justify-center text-center px-6">
+            <h1 class="text-white text-5xl md:text-8xl font-sans font-black tracking-tighter uppercase mb-6 fade-in">
+                PAUSANDO EL TIEMPO
+            </h1>
+            <p class="text-white/80 font-serif italic text-lg md:text-2xl mb-12 fade-in" style="transition-delay: 0.2s">
+                Capturando momentos que perduran para siempre.
+            </p>
+            <a href="#services"
+                class="group flex items-center space-x-4 border border-white px-10 py-5 text-white uppercase tracking-[0.4em] font-bold text-xs hover:bg-white hover:text-black transition-all fade-in"
+                style="transition-delay: 0.4s">
+                <span>Comenzar</span>
+                <svg class="w-4 h-4 transform group-hover:translate-y-1 transition-transform" fill="none"
+                    stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+                </svg>
+            </a>
+        </div>
+
+        <!-- Scroll Indicator -->
+        <div class="absolute bottom-10 left-1/2 -translate-x-1/2 z-10 animate-bounce">
+            <div class="w-[1px] h-16 bg-gradient-to-b from-white to-transparent"></div>
+        </div>
+    </section>
+
+    <!-- Value Proposition / Philosophy Section -->
+    <section id="philosophy" class="relative h-[300vh] bg-white">
+        <div class="sticky top-0 h-screen w-full flex items-center justify-center overflow-hidden">
+            <!-- Background floating photos (pushed to edges to avoid center text) -->
+            <div id="phi-images" class="absolute inset-0 pointer-events-none">
+                <img src="images/efecto/efecto_01.jpg" class="phi-photo absolute w-48 md:w-64 opacity-0 blur-sm"
+                    style="top: 8%; left: 2%;" data-speed="0.2">
+                <img src="images/efecto/efecto_02.jpg" class="phi-photo absolute w-40 md:w-56 opacity-0 blur-sm"
+                    style="top: 75%; left: 4%;" data-speed="0.5">
+                <img src="images/efecto/efecto_03.jpg" class="phi-photo absolute w-56 md:w-80 opacity-0 blur-sm"
+                    style="top: 12%; right: -2%;" data-speed="0.3">
+                <img src="images/efecto/efecto_04.jpg" class="phi-photo absolute w-44 md:w-60 opacity-0 blur-sm"
+                    style="bottom: 8%; right: 18%;" data-speed="0.6">
+                <img src="images/efecto/efecto_05.jpg" class="phi-photo absolute w-52 md:w-72 opacity-0 blur-sm"
+                    style="top: 45%; right: 4%;" data-speed="0.1">
+                <img src="images/efecto/efecto_06.jpg" class="phi-photo absolute w-40 md:w-52 opacity-0 blur-sm"
+                    style="bottom: 12%; left: 12%;" data-speed="0.4">
+                <img src="images/efecto/efecto_07.jpg" class="phi-photo absolute w-48 md:w-64 opacity-0 blur-sm"
+                    style="top: 80%; right: 25%;" data-speed="0.25">
+            </div>
+
+            <!-- Central Reveal Text -->
+            <div class="max-w-4xl mx-auto px-6 text-center z-10 relative">
+                <h2 class="text-xs md:text-sm tracking-[0.6em] font-sans font-bold text-gray-500 uppercase mb-8"
+                    style="text-shadow: 0 0 15px rgba(255,255,255,0.9), 0 0 30px rgba(255,255,255,1);">NUESTRA FILOSOFÍA
+                </h2>
+                <p id="reveal-text"
+                    class="text-2xl md:text-5xl font-serif italic text-zen-dark leading-loose mb-10 relative z-20">
+                    "La armonía entre la técnica y la emoción captura momentos que el tiempo no puede borrar."
+                </p>
+                <div class="w-12 h-[1px] bg-zen-dark mx-auto mb-10 opacity-30 relative z-20"></div>
+                <p class="text-xs md:text-sm text-gray-500 leading-loose max-w-xl mx-auto font-sans uppercase tracking-widest"
+                    style="text-shadow: 0 0 15px rgba(255,255,255,0.9), 0 0 30px rgba(255,255,255,1);">
+                    Pausando el Tiempo
+                </p>
+            </div>
+            
+            <!-- Scroll Indicator -->
+            <div class="absolute bottom-10 left-1/2 -translate-x-1/2 z-20 animate-bounce">
+                <div class="w-[2px] h-16 bg-gradient-to-b from-black to-transparent opacity-80"></div>
+            </div>
+        </div>
+    </section>
+
+    <main id="services" class="pt-24 pb-20">
+        <div class="max-w-7xl mx-auto px-6">
+            <!-- Site Logo/Title Section -->
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-sm md:text-base tracking-[0.4em] font-sans font-bold text-gray-400 uppercase mb-2">
+                    FOTÓGRAFO - VIDEÓGRAFO</h2>
+                <div class="w-20 h-[1px] bg-zen-dark mx-auto mt-4"></div>
+            </div>
+
+            <!-- Selection Cards -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+                <!-- Videografía Card -->
+                <a href="videografia.html" class="group relative overflow-hidden aspect-[4/3] bg-gray-100 fade-in">
+                    <img src="images/cover_videografia.jpg" alt="Videografía"
+                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale-[bg-gray-100] group-hover:grayscale-0">
+                    <div
+                        class="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition-colors flex items-center justify-center">
+                        <div class="text-center text-white">
+                            <h3 class="text-2xl md:text-3xl font-sans font-bold uppercase tracking-[0.2em] mb-4">
+                                Videografía</h3>
+                            <span
+                                class="inline-block border border-white px-6 py-2 text-[10px] uppercase tracking-widest group-hover:bg-white group-hover:text-black transition-all">Ver
+                                proyectos</span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Fotografía Card -->
+                <a href="fotografia.html" class="group relative overflow-hidden aspect-[4/3] bg-gray-100 fade-in"
+                    style="transition-delay: 0.1s">
+                    <img src="images/cover_fotografia.jpg" alt="Fotografía"
+                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale-[bg-gray-100] group-hover:grayscale-0">
+                    <div
+                        class="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition-colors flex items-center justify-center">
+                        <div class="text-center text-white">
+                            <h3 class="text-2xl md:text-3xl font-sans font-bold uppercase tracking-[0.2em] mb-4">
+                                Fotografía</h3>
+                            <span
+                                class="inline-block border border-white px-6 py-2 text-[10px] uppercase tracking-widest group-hover:bg-white group-hover:text-black transition-all">Explorar
+                                galerías</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Bottom Quote -->
+            <div class="text-center mt-24 fade-in" style="transition-delay: 0.3s">
+                <p class="font-serif italic text-gray-500 max-w-xl mx-auto">"Conoce mis servicios y contáctame si tienes
+                    cualquier duda"</p>
+            </div>
+        </div>
+    </main>
+
+    <!-- Social Proof Section -->
+    <section class="pt-32 pb-16 bg-gray-50 border-t border-zen-grey">
+        <div class="max-w-7xl mx-auto px-6">
+            <!-- Testimonials -->
+            <div class="text-center mb-20 fade-in">
+                <h2 class="text-xs md:text-sm tracking-[0.6em] font-sans font-bold text-gray-400 uppercase mb-4">
+                    TESTIMONIOS</h2>
+                <div class="w-12 h-[1px] bg-zen-dark mx-auto"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-32">
+                <div class="text-center fade-in" style="transition-delay: 0.1s">
+                    <p class="text-gray-600 font-serif italic mb-6 leading-relaxed">"Una sensibilidad única para captar
+                        los detalles. El trabajo en nuestra carta gastronómica superó todas las expectativas."</p>
+                    <span class="text-[10px] uppercase tracking-widest font-bold font-sans text-zen-dark">— Restaurante
+                        Entre Suspiro Y Suspiro</span>
+                </div>
+                <div class="text-center fade-in" style="transition-delay: 0.2s">
+                    <p class="text-gray-600 font-serif italic mb-6 leading-relaxed">"Profesionalidad y discreción
+                        absoluta durante nuestro evento. Las fotos transmiten exactamente la atmósfera del momento."</p>
+                    <span class="text-[10px] uppercase tracking-widest font-bold font-sans text-zen-dark">— Colegio San
+                        Agustín de Los Negrales</span>
+                </div>
+                <div class="text-center fade-in" style="transition-delay: 0.3s">
+                    <p class="text-gray-600 font-serif italic mb-6 leading-relaxed">"El vídeo promocional captó la
+                        esencia de nuestra marca de una forma elegante y minimalista. Totalmente recomendados."</p>
+                    <span class="text-[10px] uppercase tracking-widest font-bold font-sans text-zen-dark">— DJ
+                        RÚA</span>
+                </div>
+            </div>
+
+            <!-- Partners/Collabs -->
+            <div class="text-center fade-in">
+                <h3 class="text-[10px] tracking-[0.4em] font-sans font-bold text-gray-300 uppercase mb-12">HAN CONFIADO
+                    EN NOSOTROS</h3>
+                <div class="logo-carousel">
+                    <img src="images/clientes/EntreSuspiroYSuspiro_Logo.webp" alt="Entre Suspiro Y Suspiro"
+                        class="logo-item h-12 md:h-16 w-auto object-contain">
+                    <img src="images/clientes/SanAgustin_Logo.png" alt="San Agustín"
+                        class="logo-item h-12 md:h-16 w-auto object-contain">
+                    <div class="logo-item text-3xl md:text-4xl font-sans font-black tracking-[0.2em] uppercase">RÚA
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-16 border-t border-zen-grey bg-zen-dark text-white">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <img src="images/logo_white.png" alt="Pausando el Tiempo" class="h-10 mx-auto mb-8">
+            <div class="flex justify-center space-x-6 mb-10 items-center">
+                <a href="https://www.instagram.com/pau.sandoeltiempo?igsh=MTF3dnNncjJtaTZtdw==" target="_blank"
+                    rel="noopener noreferrer" class="hover:opacity-70 transition-opacity">
+                    <img src="images/RRSS/Instagram_icon.png" alt="Instagram" class="h-6 w-auto">
+                </a>
+                <a href="https://api.whatsapp.com/send?phone=34677810523" target="_blank" rel="noopener noreferrer"
+                    class="hover:opacity-70 transition-opacity">
+                    <img src="images/RRSS/WhatsApp_icon.png" alt="WhatsApp" class="h-6 w-auto">
+                </a>
+            </div>
+            <p class="text-[9px] uppercase tracking-[0.3em] text-gray-400 font-bold">
+                pausandoeltiempo.fotos@gmail.com
+            </p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>
