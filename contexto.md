@@ -29,9 +29,20 @@ Este archivo sirve como referencia central para mantener la coherencia en el des
     - Estilo común: Itálica para citas descriptivas.
 
 ### Espaciados y Layout
+### Espaciados y Layout
 - **Contenedor**: `max-w-7xl` (1280px aprox).
 - **Márgenes**: Amplios para crear "aire" (ej. `pt-32` para separación del header).
-- **Galería**: Sistema de columnas masonry (`columns-1 md:columns-2 lg:columns-3`) con `gap-8`.
+- **Galería Fotográfica**: Sistema de columnas masonry (`columns-1 md:columns-2 lg:columns-3`) con `gap-8` para respetar proporciones originales.
+- **Galería Videografía**: Sistema de **grids estructurados** (`grid-cols-2 md:grid-cols-3`) para fotogramas cinematográficos (`aspect-video`) asegurando alineación perfecta y simetría (ej. composiciones de 6 imágenes).
+
+### Adaptabilidad (Responsive Design)
+- **Breakpoint Principal**: 768px.
+- **Hero Banner (Mobile)**: Altura `70vh`. Indicador de scroll activo pero desplazado al extremo inferior (`bottom: 0.5rem`) para no interferir con botones centrales.
+- **Sección Filosofía (Mobile)**: 
+    - **Fluidez**: Scroll ajustado a `145vh` para eliminar huecos blancos innecesarios.
+    - **Efecto Niebla**: Sección que inicia **solo con texto**. Usa fotos específicas para móvil desde `images/efecto/vertical/` (01-Izquierda, 02-Derecha) que se revelan gradualmente.
+    - **Indicadores**: `#phi-scroll-indicator` bajado a `1.5rem` para no interferir con el texto.
+- **Navegación**: Menú lateral desplegable para dispositivos móviles controlado por `js/main.js`.
 
 ## Componentes Técnicos Operativos
 - **Header**: Fijo (`fixed`), fondo blanco, logo `logo_black.png`.
@@ -53,9 +64,13 @@ Este archivo sirve como referencia central para mantener la coherencia en el des
 - **Gastronomía**: Completada (Estándar de Oro).
 - **Eventos**: Completada. Configurada para **25 fotografías** siguiendo el sistema secuencial.
 - **Sesiones**: Completada. Configurada para **7 fotografías** siguiendo el sistema secuencial.
-- **Inicio**: Completada. Incluye Hero banner oscurecido, sección Filosofía interactiva (con indicador de scroll animado y revelado de texto e imágenes dinámicas) y Social Proof (Testimonios y Carrusel).
-- **Videografía**: Completada y reestructurada. Dividida en "Proyectos Principales" (Dejando Huella, Noche de Luz, Mirada 21, Invisible, San Agustín) con enlaces a vídeo y galerías de "Detrás de Cámara", y "Proyectos Visuales" (Conversaciones con el Maestro, El Sonido de la Calle) enfocada en fotogramas. Todo en una nueva subcarpeta de imágenes `images/videografia/`.
-- **Global**: Footer unificado en todas las páginas, reemplazando el texto de Instagram y WhatsApp por sus respectivos iconos hipervinculados. Galerías de Fotografía ajustadas a todo color por defecto para igualar la home.
+- **Inicio**: Completada y optimizada. Incluye Hero banner, sección Filosofía interactiva (GSAP) y Social Proof. Optimizada específicamente para móviles (<768px) ajustando alturas de sección y posicionamiento de elementos flotantes.
+- **Videografía**: Completada y optimizada. 
+    - **Estructura**: Migrada de masonry a **grids estructurados** para fotogramas.
+    - **Categorización**: Diferenciación entre "Proyectos Principales" (con enlaces a YouTube/Facebook) y "Proyectos Visuales" (archivos de stills).
+    - **Consistencia**: Composición de 6 imágenes en grids de 3x2 para los proyectos estrella (*Dejando Huella* y *Noche de Luz*). 
+    - **Flexibilidad**: Las fotos de "Detrás de Cámara" en *Noche de Luz* mantienen su aspect ratio original mediante un sistema de columnas para evitar recortes.
+- **Global**: Footer unificado con iconos de RRSS. Sistema de "Fade-in" en carga y Media Queries para asegurar la estética 'Zen-Art' en todos los dispositivos.
 
 ## Estructura de Archivos
 - **/css/style.css**: Estilos base, animaciones y lógica de zoom del lightbox.

@@ -91,13 +91,13 @@
         </div>
 
         <!-- Scroll Indicator -->
-        <div class="absolute bottom-10 left-1/2 -translate-x-1/2 z-10 animate-bounce">
+        <div id="hero-scroll-indicator" class="absolute bottom-10 left-1/2 -translate-x-1/2 z-10 animate-bounce">
             <div class="w-[1px] h-16 bg-gradient-to-b from-white to-transparent"></div>
         </div>
     </section>
 
     <!-- Value Proposition / Philosophy Section -->
-    <section id="philosophy" class="relative h-[300vh] bg-white">
+    <section id="philosophy" class="relative h-[225vh] bg-white">
         <div class="sticky top-0 h-screen w-full flex items-center justify-center overflow-hidden">
             <!-- Background floating photos (pushed to edges to avoid center text) -->
             <div id="phi-images" class="absolute inset-0 pointer-events-none">
@@ -119,11 +119,11 @@
 
             <!-- Central Reveal Text -->
             <div class="max-w-4xl mx-auto px-6 text-center z-10 relative">
-                <h2 class="text-xs md:text-sm tracking-[0.6em] font-sans font-bold text-gray-500 uppercase mb-8"
+                <h2 class="text-xs md:text-sm tracking-[0.6em] font-sans font-bold text-gray-500 uppercase mb-8 fade-in"
                     style="text-shadow: 0 0 15px rgba(255,255,255,0.9), 0 0 30px rgba(255,255,255,1);">NUESTRA FILOSOFÍA
                 </h2>
                 <p id="reveal-text"
-                    class="text-2xl md:text-5xl font-serif italic text-zen-dark leading-loose mb-10 relative z-20">
+                    class="text-2xl md:text-5xl font-serif italic text-zen-dark leading-loose mb-10 relative z-20 fade-in">
                     "La armonía entre la técnica y la emoción captura momentos que el tiempo no puede borrar."
                 </p>
                 <div class="w-12 h-[1px] bg-zen-dark mx-auto mb-10 opacity-30 relative z-20"></div>
@@ -134,7 +134,7 @@
             </div>
             
             <!-- Scroll Indicator -->
-            <div class="absolute bottom-10 left-1/2 -translate-x-1/2 z-20 animate-bounce">
+            <div id="phi-scroll-indicator" class="absolute bottom-10 left-1/2 -translate-x-1/2 z-20 animate-bounce">
                 <div class="w-[2px] h-16 bg-gradient-to-b from-black to-transparent opacity-80"></div>
             </div>
         </div>
