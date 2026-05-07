@@ -204,6 +204,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 const originalSrcs = Array.from(phiPhotos).map(img => img.src);
                 if (phiPhotos[0]) phiPhotos[0].src = 'images/efecto/vertical/efecto_vertical_01.jpg';
                 if (phiPhotos[2]) phiPhotos[2].src = 'images/efecto/vertical/efecto_vertical_02.jpg';
+                if (phiPhotos[5]) phiPhotos[5].src = 'images/efecto/vertical/efecto_vertical_03.jpg';
 
                 phiPhotos.forEach((photo) => {
                     const speed = parseFloat(photo.dataset.speed) || 0.2;
@@ -216,8 +217,8 @@ document.addEventListener('DOMContentLoaded', () => {
                         },
                         opacity: 0.4,
                         filter: "blur(2px)",
-                        y: -100 * speed * 5,
-                        ease: "power2.out"
+                        y: -150 * speed,
+                        ease: "none"
                     });
                 });
 
