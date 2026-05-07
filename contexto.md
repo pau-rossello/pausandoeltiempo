@@ -37,11 +37,14 @@ Este archivo sirve como referencia central para mantener la coherencia en el des
 
 ### Adaptabilidad (Responsive Design)
 - **Breakpoint Principal**: 768px.
-- **Hero Banner (Mobile)**: Altura `70vh`. Indicador de scroll activo pero desplazado al extremo inferior (`bottom: 0.5rem`) para no interferir con botones centrales.
+- **Hero Banner (Mobile)**: Altura `100vh` (`100dvh`). Indicador de scroll activo pero desplazado al extremo inferior (`bottom: 0.5rem`) para no interferir con botones centrales. Diseño tipo "carta de presentación" para impacto inicial.
 - **Sección Filosofía (Mobile)**: 
     - **Fluidez**: Scroll ajustado a `145vh` para eliminar huecos blancos innecesarios.
-    - **Efecto Niebla**: Sección que inicia **solo con texto**. Usa fotos específicas para móvil desde `images/efecto/vertical/` (01-Izquierda, 02-Derecha) que se revelan gradualmente.
+    - **Efecto Niebla**: Sección que inicia **solo con texto**. Usa fotos específicas para móvil desde `images/efecto/vertical/` (01-Izquierda Superior, 02-Derecha Central, 03-Izquierda Inferior) que se revelan gradualmente con velocidad uniforme vinculada al scroll.
     - **Indicadores**: `#phi-scroll-indicator` bajado a `1.5rem` para no interferir con el texto.
+- **Social Proof / Testimonios**: 
+    - **Puente Visual**: Línea de gradiente vertical (`md:hidden`) exclusiva para móvil para guiar el scroll tras la frase de servicios.
+    - **Compactación**: Espaciado reducido (`pb-0` / `pt-16` en móvil, `pb-12` / `pt-20` en escritorio) para asegurar un flujo continuo y evitar la sensación de "fin de página".
 - **Navegación**: Menú lateral desplegable para dispositivos móviles controlado por `js/main.js`.
 
 ## Componentes Técnicos Operativos
@@ -64,7 +67,7 @@ Este archivo sirve como referencia central para mantener la coherencia en el des
 - **Gastronomía**: Completada (Estándar de Oro).
 - **Eventos**: Completada. Configurada para **25 fotografías** siguiendo el sistema secuencial.
 - **Sesiones**: Completada. Configurada para **7 fotografías** siguiendo el sistema secuencial.
-- **Inicio**: Completada y optimizada. Incluye Hero banner, sección Filosofía interactiva (GSAP) y Social Proof. Optimizada específicamente para móviles (<768px) ajustando alturas de sección y posicionamiento de elementos flotantes.
+- **Inicio**: Completada y optimizada. Incluye Hero banner full-screen (`100vh`), sección Filosofía con 3 imágenes verticales en móvil y velocidad uniforme (`ease: none`). Flujo optimizado hacia testimonios mediante compactación de espacios y puente visual.
 - **Videografía**: Completada y optimizada. 
     - **Estructura**: Migrada de masonry a **grids estructurados** para fotogramas.
     - **Categorización**: Diferenciación entre "Proyectos Principales" (con enlaces a YouTube/Facebook) y "Proyectos Visuales" (archivos de stills).
