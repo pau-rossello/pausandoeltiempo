@@ -143,7 +143,8 @@ h1, h2, h3, h4, .font-heading {
 @media (max-width: 767px) {
     /* Banner Adjustment */
     section.relative.h-screen {
-        height: 70vh !important;
+        height: 100vh !important;
+        height: 100dvh !important; /* Support for dynamic viewport height */
     }
 
     #hero-scroll-indicator {
@@ -197,7 +198,10 @@ h1, h2, h3, h4, .font-heading {
         z-index: 5;
     }
     .phi-photo:nth-child(6) { 
-        display: none !important; /* Simplify to 2 photos for cleaner mobile look */
+        top: 75% !important; 
+        left: -10% !important; 
+        z-index: 5;
+        display: block !important;
     }
 
     /* Fine-tune central text with shadow for legibility over photos */
