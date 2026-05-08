@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,28 +18,39 @@
         }
     </script>
 </head>
+
 <body class="bg-white text-zen-dark antialiased">
 
     <!-- Header -->
-    <header id="main-header" class="fixed top-0 left-0 w-full z-50 transition-all duration-300 px-6 py-4 md:px-12 md:py-6 bg-white">
+    <header id="main-header"
+        class="fixed top-0 left-0 w-full z-50 transition-all duration-300 px-6 py-4 md:px-12 md:py-6 bg-white">
         <div class="max-w-7xl mx-auto flex justify-between items-center border-b border-zen-grey pb-4">
             <a href="index.html" class="flex items-center">
                 <img src="images/logo_black.png" alt="Pausando el Tiempo" class="h-8 md:h-10">
             </a>
-            <nav class="hidden md:flex items-center space-x-8 text-[10px] uppercase tracking-[0.2em] font-sans font-bold">
+            <nav
+                class="hidden md:flex items-center space-x-8 text-[10px] uppercase tracking-[0.2em] font-sans font-bold">
                 <a href="index.html" class="hover:text-gray-400 transition-colors">Inicio</a>
                 <a href="fotografia.html" class="hover:text-gray-400 transition-colors">Fotografía</a>
                 <a href="videografia.html" class="hover:text-gray-400 transition-colors">Videografía</a>
                 <a href="sobre-mi.html" class="hover:text-gray-400 transition-colors">Sobre mí</a>
                 <a href="contacto.html" class="hover:text-gray-400 transition-colors">Contacto</a>
             </nav>
-            <button id="menu-toggle" class="md:hidden p-2"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg></button>
+            <button id="menu-toggle" class="md:hidden p-2"><svg class="w-6 h-6" fill="none" stroke="currentColor"
+                    viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7">
+                    </path>
+                </svg></button>
         </div>
     </header>
 
     <!-- Mobile Nav -->
-    <div id="mobile-nav" class="fixed inset-0 bg-white z-[60] flex flex-col items-center justify-center space-y-8 text-lg uppercase tracking-widest font-sans transition-transform duration-500 translate-x-full">
-        <button id="menu-close" class="absolute top-6 right-6 p-2"><svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg></button>
+    <div id="mobile-nav"
+        class="fixed inset-0 bg-white z-[60] flex flex-col items-center justify-center space-y-8 text-lg uppercase tracking-widest font-sans transition-transform duration-500 translate-x-full">
+        <button id="menu-close" class="absolute top-6 right-6 p-2"><svg class="w-8 h-8" fill="none"
+                stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+            </svg></button>
         <a href="index.html">Inicio</a>
         <a href="fotografia.html">Fotografía</a>
         <a href="videografia.html">Videografía</a>
@@ -49,35 +61,78 @@
     <main class="pt-32 pb-20">
         <div class="max-w-7xl mx-auto px-6">
             <div class="text-center mb-16 fade-in">
-                <h2 class="text-sm md:text-base tracking-[0.4em] font-sans font-bold text-gray-400 uppercase mb-2">GASTRONOMÍA</h2>
-                <p class="mt-4 text-gray-600 font-serif italic">"Capturando el arte en cada plato."</p>
+                <h2 class="text-sm md:text-base tracking-[0.4em] font-sans font-bold text-gray-400 uppercase mb-2">
+                    GASTRONOMÍA</h2>
+                <p class="mt-4 text-gray-600 font-serif italic">Capturando el arte en cada plato.</p>
                 <div class="w-20 h-[1px] bg-zen-dark mx-auto mt-6"></div>
             </div>
 
             <!-- Masonry Grid -->
             <div class="columns-1 md:columns-2 lg:columns-3 gap-8 space-y-8 fade-in">
                 <!-- Fotos 01-21 -->
-                <div class="gallery-item cursor-pointer overflow-hidden group"><img src="images/gastronomia/gastro_01.jpg" alt="Gastronomía 01" class="w-full hover:scale-105 transition-all duration-700"></div>
-                <div class="gallery-item cursor-pointer overflow-hidden group"><img src="images/gastronomia/gastro_02.jpg" alt="Gastronomía 02" class="w-full hover:scale-105 transition-all duration-700"></div>
-                <div class="gallery-item cursor-pointer overflow-hidden group"><img src="images/gastronomia/gastro_03.jpg" alt="Gastronomía 03" class="w-full hover:scale-105 transition-all duration-700"></div>
-                <div class="gallery-item cursor-pointer overflow-hidden group"><img src="images/gastronomia/gastro_04.jpg" alt="Gastronomía 04" class="w-full hover:scale-105 transition-all duration-700"></div>
-                <div class="gallery-item cursor-pointer overflow-hidden group"><img src="images/gastronomia/gastro_05.jpg" alt="Gastronomía 05" class="w-full hover:scale-105 transition-all duration-700"></div>
-                <div class="gallery-item cursor-pointer overflow-hidden group"><img src="images/gastronomia/gastro_06.jpg" alt="Gastronomía 06" class="w-full hover:scale-105 transition-all duration-700"></div>
-                <div class="gallery-item cursor-pointer overflow-hidden group"><img src="images/gastronomia/gastro_07.jpg" alt="Gastronomía 07" class="w-full hover:scale-105 transition-all duration-700"></div>
-                <div class="gallery-item cursor-pointer overflow-hidden group"><img src="images/gastronomia/gastro_08.jpg" alt="Gastronomía 08" class="w-full hover:scale-105 transition-all duration-700"></div>
-                <div class="gallery-item cursor-pointer overflow-hidden group"><img src="images/gastronomia/gastro_09.jpg" alt="Gastronomía 09" class="w-full hover:scale-105 transition-all duration-700"></div>
-                <div class="gallery-item cursor-pointer overflow-hidden group"><img src="images/gastronomia/gastro_10.jpg" alt="Gastronomía 10" class="w-full hover:scale-105 transition-all duration-700"></div>
-                <div class="gallery-item cursor-pointer overflow-hidden group"><img src="images/gastronomia/gastro_11.jpg" alt="Gastronomía 11" class="w-full hover:scale-105 transition-all duration-700"></div>
-                <div class="gallery-item cursor-pointer overflow-hidden group"><img src="images/gastronomia/gastro_12.jpg" alt="Gastronomía 12" class="w-full hover:scale-105 transition-all duration-700"></div>
-                <div class="gallery-item cursor-pointer overflow-hidden group"><img src="images/gastronomia/gastro_13.jpg" alt="Gastronomía 13" class="w-full hover:scale-105 transition-all duration-700"></div>
-                <div class="gallery-item cursor-pointer overflow-hidden group"><img src="images/gastronomia/gastro_14.jpg" alt="Gastronomía 14" class="w-full hover:scale-105 transition-all duration-700"></div>
-                <div class="gallery-item cursor-pointer overflow-hidden group"><img src="images/gastronomia/gastro_15.jpg" alt="Gastronomía 15" class="w-full hover:scale-105 transition-all duration-700"></div>
-                <div class="gallery-item cursor-pointer overflow-hidden group"><img src="images/gastronomia/gastro_16.jpg" alt="Gastronomía 16" class="w-full hover:scale-105 transition-all duration-700"></div>
-                <div class="gallery-item cursor-pointer overflow-hidden group"><img src="images/gastronomia/gastro_17.jpg" alt="Gastronomía 17" class="w-full hover:scale-105 transition-all duration-700"></div>
-                <div class="gallery-item cursor-pointer overflow-hidden group"><img src="images/gastronomia/gastro_18.jpg" alt="Gastronomía 18" class="w-full hover:scale-105 transition-all duration-700"></div>
-                <div class="gallery-item cursor-pointer overflow-hidden group"><img src="images/gastronomia/gastro_19.jpg" alt="Gastronomía 19" class="w-full hover:scale-105 transition-all duration-700"></div>
-                <div class="gallery-item cursor-pointer overflow-hidden group"><img src="images/gastronomia/gastro_20.jpg" alt="Gastronomía 20" class="w-full hover:scale-105 transition-all duration-700"></div>
-                <div class="gallery-item cursor-pointer overflow-hidden group"><img src="images/gastronomia/gastro_21.jpg" alt="Gastronomía 21" class="w-full hover:scale-105 transition-all duration-700"></div>
+                <div class="gallery-item cursor-pointer overflow-hidden group"><img
+                        src="images/gastronomia/gastro_01.jpg" alt="Gastronomía 01"
+                        class="w-full hover:scale-105 transition-all duration-700"></div>
+                <div class="gallery-item cursor-pointer overflow-hidden group"><img
+                        src="images/gastronomia/gastro_02.jpg" alt="Gastronomía 02"
+                        class="w-full hover:scale-105 transition-all duration-700"></div>
+                <div class="gallery-item cursor-pointer overflow-hidden group"><img
+                        src="images/gastronomia/gastro_03.jpg" alt="Gastronomía 03"
+                        class="w-full hover:scale-105 transition-all duration-700"></div>
+                <div class="gallery-item cursor-pointer overflow-hidden group"><img
+                        src="images/gastronomia/gastro_04.jpg" alt="Gastronomía 04"
+                        class="w-full hover:scale-105 transition-all duration-700"></div>
+                <div class="gallery-item cursor-pointer overflow-hidden group"><img
+                        src="images/gastronomia/gastro_05.jpg" alt="Gastronomía 05"
+                        class="w-full hover:scale-105 transition-all duration-700"></div>
+                <div class="gallery-item cursor-pointer overflow-hidden group"><img
+                        src="images/gastronomia/gastro_06.jpg" alt="Gastronomía 06"
+                        class="w-full hover:scale-105 transition-all duration-700"></div>
+                <div class="gallery-item cursor-pointer overflow-hidden group"><img
+                        src="images/gastronomia/gastro_07.jpg" alt="Gastronomía 07"
+                        class="w-full hover:scale-105 transition-all duration-700"></div>
+                <div class="gallery-item cursor-pointer overflow-hidden group"><img
+                        src="images/gastronomia/gastro_08.jpg" alt="Gastronomía 08"
+                        class="w-full hover:scale-105 transition-all duration-700"></div>
+                <div class="gallery-item cursor-pointer overflow-hidden group"><img
+                        src="images/gastronomia/gastro_09.jpg" alt="Gastronomía 09"
+                        class="w-full hover:scale-105 transition-all duration-700"></div>
+                <div class="gallery-item cursor-pointer overflow-hidden group"><img
+                        src="images/gastronomia/gastro_10.jpg" alt="Gastronomía 10"
+                        class="w-full hover:scale-105 transition-all duration-700"></div>
+                <div class="gallery-item cursor-pointer overflow-hidden group"><img
+                        src="images/gastronomia/gastro_11.jpg" alt="Gastronomía 11"
+                        class="w-full hover:scale-105 transition-all duration-700"></div>
+                <div class="gallery-item cursor-pointer overflow-hidden group"><img
+                        src="images/gastronomia/gastro_12.jpg" alt="Gastronomía 12"
+                        class="w-full hover:scale-105 transition-all duration-700"></div>
+                <div class="gallery-item cursor-pointer overflow-hidden group"><img
+                        src="images/gastronomia/gastro_13.jpg" alt="Gastronomía 13"
+                        class="w-full hover:scale-105 transition-all duration-700"></div>
+                <div class="gallery-item cursor-pointer overflow-hidden group"><img
+                        src="images/gastronomia/gastro_14.jpg" alt="Gastronomía 14"
+                        class="w-full hover:scale-105 transition-all duration-700"></div>
+                <div class="gallery-item cursor-pointer overflow-hidden group"><img
+                        src="images/gastronomia/gastro_15.jpg" alt="Gastronomía 15"
+                        class="w-full hover:scale-105 transition-all duration-700"></div>
+                <div class="gallery-item cursor-pointer overflow-hidden group"><img
+                        src="images/gastronomia/gastro_16.jpg" alt="Gastronomía 16"
+                        class="w-full hover:scale-105 transition-all duration-700"></div>
+                <div class="gallery-item cursor-pointer overflow-hidden group"><img
+                        src="images/gastronomia/gastro_17.jpg" alt="Gastronomía 17"
+                        class="w-full hover:scale-105 transition-all duration-700"></div>
+                <div class="gallery-item cursor-pointer overflow-hidden group"><img
+                        src="images/gastronomia/gastro_18.jpg" alt="Gastronomía 18"
+                        class="w-full hover:scale-105 transition-all duration-700"></div>
+                <div class="gallery-item cursor-pointer overflow-hidden group"><img
+                        src="images/gastronomia/gastro_19.jpg" alt="Gastronomía 19"
+                        class="w-full hover:scale-105 transition-all duration-700"></div>
+                <div class="gallery-item cursor-pointer overflow-hidden group"><img
+                        src="images/gastronomia/gastro_20.jpg" alt="Gastronomía 20"
+                        class="w-full hover:scale-105 transition-all duration-700"></div>
+                <div class="gallery-item cursor-pointer overflow-hidden group"><img
+                        src="images/gastronomia/gastro_21.jpg" alt="Gastronomía 21"
+                        class="w-full hover:scale-105 transition-all duration-700"></div>
             </div>
         </div>
     </main>
@@ -86,10 +141,12 @@
         <div class="max-w-7xl mx-auto px-6 text-center">
             <img src="images/logo_white.png" alt="Pausando el Tiempo" class="h-10 mx-auto mb-8">
             <div class="flex justify-center space-x-6 mb-10 items-center">
-                <a href="https://www.instagram.com/pau.sandoeltiempo?igsh=MTF3dnNncjJtaTZtdw==" target="_blank" rel="noopener noreferrer" class="hover:opacity-70 transition-opacity">
+                <a href="https://www.instagram.com/pau.sandoeltiempo?igsh=MTF3dnNncjJtaTZtdw==" target="_blank"
+                    rel="noopener noreferrer" class="hover:opacity-70 transition-opacity">
                     <img src="images/RRSS/Instagram_icon.png" alt="Instagram" class="h-6 w-auto">
                 </a>
-                <a href="https://api.whatsapp.com/send?phone=34677810523" target="_blank" rel="noopener noreferrer" class="hover:opacity-70 transition-opacity">
+                <a href="https://api.whatsapp.com/send?phone=34677810523" target="_blank" rel="noopener noreferrer"
+                    class="hover:opacity-70 transition-opacity">
                     <img src="images/RRSS/WhatsApp_icon.png" alt="WhatsApp" class="h-6 w-auto">
                 </a>
             </div>
@@ -107,4 +164,5 @@
 
     <script src="js/main.js"></script>
 </body>
+
 </html>
