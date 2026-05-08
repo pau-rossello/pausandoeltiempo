@@ -73,7 +73,9 @@ Este archivo sirve como referencia central para mantener la coherencia en el des
     - **Categorización**: Diferenciación entre "Proyectos Principales" (con enlaces a YouTube/Facebook) y "Proyectos Visuales" (archivos de stills).
     - **Consistencia**: Composición de 6 imágenes en grids de 3x2 para los proyectos estrella (*Dejando Huella* y *Noche de Luz*). 
     - **Flexibilidad**: Las fotos de "Detrás de Cámara" en *Noche de Luz* mantienen su aspect ratio original mediante un sistema de columnas para evitar recortes.
-- **Global**: Footer unificado con iconos de RRSS. Sistema de "Fade-in" en carga y Media Queries para asegurar la estética 'Zen-Art' en todos los dispositivos.
+- **Sobre mí**: Completada. Texto biográfico justificado para mayor legibilidad y coherencia visual.
+- **Contacto**: Estructura de página lista. Formulario pendiente de integración con servicio de envío (ej. Formspree) o futura migración a WordPress.
+- **Global**: Footer unificado en todas las páginas con logo blanco, iconos de RRSS, ubicación (Madrid, España) y email. Sistema de "Fade-in" en carga y Media Queries para asegurar la estética 'Zen-Art' en todos los dispositivos.
 
 ## Estructura de Archivos
 - **/css/style.css**: Estilos base, animaciones y lógica de zoom del lightbox.
