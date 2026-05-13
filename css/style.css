@@ -117,25 +117,12 @@ h1, h2, h3, h4, .font-heading {
 .logo-item {
     transition: all 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
     filter: grayscale(0%) opacity(0.5); /* Muted by default */
-    transform: scale(0.9);
     flex-shrink: 0;
 }
 
-/* Default state: center is slightly larger but same color */
-.logo-item.active {
-    transform: scale(1.15);
-    filter: grayscale(0%) opacity(0.5);
-}
-
-/* When hovering the carousel, all items reset to base scale... */
-.logo-carousel:hover .logo-item {
-    transform: scale(0.9);
-    filter: grayscale(0%) opacity(0.4);
-}
-
-/* ...except the one being hovered, which stands out */
-.logo-carousel .logo-item:hover {
-    transform: scale(1.15) !important;
+/* Individual logo hover */
+.logo-item:hover {
+    transform: scale(1.1) !important;
     filter: grayscale(0%) opacity(1) !important;
 }
 
