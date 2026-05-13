@@ -119,43 +119,8 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Logo Carousel Logic
-    const carouselContainer = document.querySelector('.logo-carousel');
-    if (carouselContainer) {
-        const items = Array.from(carouselContainer.children);
-        let activeIndex = 1;
-        let carouselInterval = null;
-
-        const updateCarousel = () => {
-            items.forEach((item, index) => {
-                item.classList.remove('active');
-                if (index === activeIndex) item.classList.add('active');
-            });
-            activeIndex = (activeIndex + 1) % items.length;
-        };
-
-        const startCarousel = () => {
-            if (!carouselInterval) {
-                carouselInterval = setInterval(() => {
-                    // Only update if not hovering an individual item
-                    const isHoveringItem = items.some(item => item.matches(':hover'));
-                    if (!isHoveringItem) updateCarousel();
-                }, 2500);
-            }
-        };
-
-        const stopCarousel = () => {
-            clearInterval(carouselInterval);
-            carouselInterval = null;
-        };
-
-        // Initial state: static center
-        items[activeIndex].classList.add('active');
-
-        // Events
-        carouselContainer.addEventListener('mouseenter', startCarousel);
-        carouselContainer.addEventListener('mouseleave', stopCarousel);
-    }
+    // Logo Carousel: Removed automatic highlighting logic as per user request.
+    // Interaction is now handled purely via CSS hover effects.
 
     // Smooth scroll for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
