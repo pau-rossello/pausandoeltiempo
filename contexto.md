@@ -58,24 +58,17 @@ Este archivo sirve como referencia central para mantener la coherencia en el des
 - **Lightbox Pro**: 
     - Visualización a pantalla completa.
     - **Sistema de Zoom**: Clic en imagen para ampliar (escala 1.5x). Cursores dinámicos (`zoom-in` / `zoom-out`).
-- **Carrusel de Clientes**: Sistema interactivo en el inicio que destaca logos mediante escalado y opacidad. Activación por hover y rotación automática pausada por interacción individual.
+- **Carrusel de Clientes**: Sistema interactivo en el inicio que destaca logos mediante escalado y opacidad exclusivamente por hover.
 - **GSAP & ScrollTrigger**: Utilizado en la página de Inicio para animaciones complejas vinculadas al scroll (revelado de texto progresivo y efectos de desenfoque/parallax en imágenes de fondo).
 - **Rutas**: Siempre relativas (ej. `images/gastronomia/...`).
 - **Sistema de Gestión de Orden**: "Nomenclatura Secuencial". El HTML está configurado del 01 al XX. El usuario cambia el orden renombrando los archivos locales.
 
 ## Estado del Proyecto
-- **Gastronomía**: Completada (Estándar de Oro).
-- **Eventos**: Completada. Configurada para **25 fotografías** siguiendo el sistema secuencial.
-- **Sesiones**: Completada. Configurada para **7 fotografías** siguiendo el sistema secuencial.
-- **Inicio**: Completada y optimizada. Incluye Hero banner full-screen (`100vh`), sección Filosofía con 3 imágenes verticales en móvil y velocidad uniforme (`ease: none`). Flujo optimizado hacia testimonios mediante compactación de espacios y puente visual.
-- **Videografía**: Completada y optimizada. 
-    - **Estructura**: Migrada de masonry a **grids estructurados** para fotogramas.
-    - **Categorización**: Diferenciación entre "Proyectos Principales" (con enlaces a YouTube/Facebook) y "Proyectos Visuales" (archivos de stills).
-    - **Consistencia**: Composición de 6 imágenes en grids de 3x2 para los proyectos estrella (*Dejando Huella* y *Noche de Luz*). 
-    - **Flexibilidad**: Las fotos de "Detrás de Cámara" en *Noche de Luz* mantienen su aspect ratio original mediante un sistema de columnas para evitar recortes.
-- **Sobre mí**: Completada. Texto biográfico justificado para mayor legibilidad y coherencia visual.
-- **Contacto**: Estructura de página lista. Formulario pendiente de integración con servicio de envío (ej. Formspree) o futura migración a WordPress.
-- **Global**: Footer unificado en todas las páginas con logo blanco, iconos de RRSS, ubicación (Madrid, España) y email. Sistema de "Fade-in" en carga y Media Queries para asegurar la estética 'Zen-Art' en todos los dispositivos.
+- **Sobre mí**: Completada. Texto biográfico justificado para mayor legibilidad. Menú móvil operativo.
+- **Contacto**: Estructura de página lista. Información de ubicación actualizada a "Madrid, España". Formulario pendiente de integración con servicio de envío (ej. Formspree) o futura migración a WordPress.
+- **Inicio**: Completada y optimizada. Hero banner full-screen, sección Filosofía dinámica y carrusel de clientes actualizado (Buen Consejo y DJ Rúa incluidos). Se ha eliminado la frase de servicios para un diseño más directo, manteniendo el puente visual móvil.
+- **Videografía**: Completada y optimizada. Incluye sección especial para **Mirada 21 Media Lab** con grid de 3 vídeos verticales (9:16) enlazados a Instagram. Menú móvil operativo.
+- **Global**: Footer unificado en las 8 páginas del sitio con logo blanco, iconos de Instagram/WhatsApp, ubicación (Madrid, España) y email. Sistema de "Fade-in" en carga consistente.
 
 ## Estructura de Archivos
 - **/css/style.css**: Estilos base, animaciones y lógica de zoom del lightbox.
