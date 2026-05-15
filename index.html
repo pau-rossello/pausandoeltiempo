@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pausando el Tiempo | Portfolio Audiovisual</title>
+    <meta name="description" content="Portfolio profesional de Pau Rosselló. Fotógrafo y videógrafo especializado en gastronomía, eventos y sesiones en Madrid, España. Capturando momentos que perduran para siempre.">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="css/style.css">
     <!-- GSAP & ScrollTrigger -->
@@ -35,7 +36,7 @@
             </a>
             <nav class="hidden md:flex items-center space-x-8 text-[10px] uppercase tracking-[0.2em] font-sans font-bold text-white transition-all duration-500"
                 id="header-nav">
-                <a href="index.html" class="text-gray-900 border-b border-black">Inicio</a>
+                <a href="index.html" class="active-nav-link">Inicio</a>
                 <a href="fotografia.html" class="hover:text-gray-400 transition-colors">Fotografía</a>
                 <a href="videografia.html" class="hover:text-gray-400 transition-colors">Videografía</a>
                 <a href="sobre-mi.html" class="hover:text-gray-400 transition-colors">Sobre mí</a>
@@ -56,7 +57,7 @@
                 stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
             </svg></button>
-        <a href="index.html">Inicio</a>
+        <a href="index.html" class="active-nav-link">Inicio</a>
         <a href="fotografia.html">Fotografía</a>
         <a href="videografia.html">Videografía</a>
         <a href="sobre-mi.html">Sobre mí</a>
@@ -153,7 +154,7 @@
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
                 <!-- Videografía Card -->
                 <a href="videografia.html" class="group relative overflow-hidden aspect-[4/3] bg-gray-100 fade-in">
-                    <img src="images/cover_videografia.jpg" alt="Portada de la sección Videografía"
+                    <img src="images/cover_videografia.jpg" alt="Portada de la sección Videografía" loading="lazy"
                         class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale-[bg-gray-100] group-hover:grayscale-0">
                     <div
                         class="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition-colors flex items-center justify-center">
@@ -170,7 +171,7 @@
                 <!-- Fotografía Card -->
                 <a href="fotografia.html" class="group relative overflow-hidden aspect-[4/3] bg-gray-100 fade-in"
                     style="transition-delay: 0.1s">
-                    <img src="images/cover_fotografia.jpg" alt="Portada de la sección Fotografía"
+                    <img src="images/cover_fotografia.jpg" alt="Portada de la sección Fotografía" loading="lazy"
                         class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale-[bg-gray-100] group-hover:grayscale-0">
                     <div
                         class="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition-colors flex items-center justify-center">
@@ -239,13 +240,13 @@
                     EN NOSOTROS</h3>
                 <div class="logo-carousel-container overflow-hidden">
                     <div class="logo-carousel flex items-center justify-center gap-16 md:gap-24" id="logo-track">
-                        <img src="images/clientes/EntreSuspiroYSuspiro_Logo.webp" alt="Entre Suspiro Y Suspiro"
+                        <img src="images/clientes/EntreSuspiroYSuspiro_Logo.webp" alt="Entre Suspiro Y Suspiro" loading="lazy"
                             class="logo-item h-12 md:h-16 w-auto object-contain relative top-2">
-                        <img src="images/clientes/SanAgustin_Logo.png" alt="San Agustín"
+                        <img src="images/clientes/SanAgustin_Logo.png" alt="San Agustín" loading="lazy"
                             class="logo-item h-12 md:h-16 w-auto object-contain">
-                        <img src="images/clientes/Rua_Logo.png" alt="DJ Rúa"
+                        <img src="images/clientes/Rua_Logo.png" alt="DJ Rúa" loading="lazy"
                             class="logo-item h-10 md:h-14 w-auto object-contain">
-                        <img src="images/clientes/BuenConsejo_Logo.png" alt="Buen Consejo"
+                        <img src="images/clientes/BuenConsejo_Logo.png" alt="Buen Consejo" loading="lazy"
                             class="logo-item h-12 md:h-16 w-auto object-contain">
                     </div>
                 </div>
