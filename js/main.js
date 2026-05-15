@@ -217,4 +217,53 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
+    // --- Contact Form Handling ---
+    const contactForm = document.getElementById('contact-form');
+    const successMessage = document.getElementById('success-message');
+    const errorMessage = document.getElementById('error-message');
+
+    if (contactForm && successMessage && errorMessage) {
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            // Manual Validation
+            const formData = new FormData(contactForm);
+            const isComplete = Array.from(formData.values()).every(value => value.trim() !== '');
+
+            if (!isComplete) {
+                // Show error message
+                errorMessage.classList.remove('hidden');
+                errorMessage.classList.add('opacity-100');
+                
+                // Optional: shake effect or just highlight
+                setTimeout(() => {
+                    errorMessage.classList.add('opacity-0');
+                    setTimeout(() => {
+                        errorMessage.classList.add('hidden');
+                        errorMessage.classList.remove('opacity-0', 'opacity-100');
+                    }, 300);
+                }, 4000);
+                return;
+            }
+
+            // If complete, proceed to success
+            errorMessage.classList.add('hidden');
+            
+            // Show success message
+            successMessage.classList.remove('hidden');
+            successMessage.classList.add('opacity-100');
+            
+            // Clear the form
+            contactForm.reset();
+            
+            // Optional: Hide success message after a while
+            setTimeout(() => {
+                successMessage.classList.add('opacity-0');
+                setTimeout(() => {
+                    successMessage.classList.add('hidden');
+                    successMessage.classList.remove('opacity-0', 'opacity-100');
+                }, 500);
+            }, 6000);
+        });
+    }
 });
