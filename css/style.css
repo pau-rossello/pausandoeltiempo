@@ -53,8 +53,8 @@ h1, h2, h3, h4, .font-heading {
 
 .fade-in {
     opacity: 0;
-    transform: translateY(40px);
-    transition: opacity 1.2s cubic-bezier(0.2, 0.8, 0.2, 1), transform 1.2s cubic-bezier(0.2, 0.8, 0.2, 1);
+    transform: translateY(20px);
+    transition: opacity 0.8s cubic-bezier(0.2, 0.8, 0.2, 1), transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
 .fade-in.visible {
@@ -218,4 +218,10 @@ h1, h2, h3, h4, .font-heading {
         padding: 0 1rem;
         filter: grayscale(0%) opacity(1) !important;
     }
+}
+
+/* Active Nav Link */
+.active-nav-link {
+    border-bottom: 1px solid currentColor !important;
+    opacity: 1 !important;
 }
