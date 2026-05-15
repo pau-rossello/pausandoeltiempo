@@ -45,9 +45,27 @@ document.addEventListener('DOMContentLoaded', () => {
                 revealObserver.unobserve(entry.target); // Only reveal once
             }
         });
-    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+    }, { threshold: 0.01, rootMargin: '0px' });
 
     revealElements.forEach(el => revealObserver.observe(el));
+    
+    // Immediate reveal for elements already in viewport
+    const revealIfInView = () => {
+        revealElements.forEach(el => {
+            if (!el.classList.contains('visible')) {
+                const rect = el.getBoundingClientRect();
+                // Elements that are even partially in view should reveal
+                if (rect.top < window.innerHeight && rect.bottom > 0) {
+                    el.classList.add('visible');
+                    revealObserver.unobserve(el);
+                }
+            }
+        });
+    };
+    
+    // Run once on load and after a small delay to catch layout shifts
+    revealIfInView();
+    setTimeout(revealIfInView, 500);
 
     // Mobile Menu Toggle
     const menuToggle = document.getElementById('menu-toggle');
