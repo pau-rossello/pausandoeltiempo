@@ -81,13 +81,27 @@
                 </div>
 
                 <div class="fade-in" style="transition-delay: 0.2s">
-                    <form action="#" method="POST" class="space-y-6">
-                        <input type="text" placeholder="NOMBRE"
+                    <form id="contact-form" action="#" method="POST" class="space-y-6" novalidate>
+                        <input type="text" name="nombre" placeholder="NOMBRE"
                             class="w-full border-b border-zen-grey py-3 text-[10px] tracking-widest font-bold uppercase focus:border-zen-dark outline-none transition-colors">
-                        <input type="email" placeholder="EMAIL"
+                        <input type="email" name="email" placeholder="EMAIL"
                             class="w-full border-b border-zen-grey py-3 text-[10px] tracking-widest font-bold uppercase focus:border-zen-dark outline-none transition-colors">
-                        <textarea placeholder="MENSAJE" rows="4"
+                        <textarea name="mensaje" placeholder="MENSAJE" rows="4"
                             class="w-full border-b border-zen-grey py-3 text-[10px] tracking-widest font-bold uppercase focus:border-zen-dark outline-none transition-colors resize-none"></textarea>
+                        
+                        <!-- Custom Error Message -->
+                        <div id="error-message" class="hidden text-red-400 text-[10px] tracking-widest font-bold uppercase transition-all duration-300">
+                            Cada detalle es importante para contar una historia. Por favor, completa todos los campos.
+                        </div>
+
+                        <!-- Custom Success Message -->
+                        <div id="success-message" class="hidden text-zen-dark text-[10px] tracking-widest font-bold uppercase transition-all duration-300">
+                            Mensaje enviado.
+                            <p class="mt-2 text-gray-600 font-serif italic normal-case tracking-normal text-sm">
+                                Tu historia ya está en proceso de convertirse en imágenes.
+                            </p>
+                        </div>
+
                         <button type="submit"
                             class="mt-8 border border-zen-dark px-12 py-4 text-[10px] uppercase tracking-[0.3em] font-bold hover:bg-zen-dark hover:text-white transition-all">Enviar</button>
                     </form>
