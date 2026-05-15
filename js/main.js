@@ -194,4 +194,27 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
+    // --- Logo Carousel Mobile (Infinite Loop) ---
+    const logoTrack = document.getElementById('logo-track');
+    if (logoTrack && typeof gsap !== 'undefined') {
+        ScrollTrigger.matchMedia({
+            "(max-width: 767px)": function() {
+                // Clone logos for seamless loop
+                const logos = logoTrack.querySelectorAll('.logo-item');
+                logos.forEach(logo => {
+                    const clone = logo.cloneNode(true);
+                    logoTrack.appendChild(clone);
+                });
+
+                // Animate the track
+                // 4 logos * 33.333vw = 133.332vw
+                gsap.to(logoTrack, {
+                    x: "-133.332vw",
+                    duration: 20,
+                    ease: "none",
+                    repeat: -1
+                });
+            }
+        });
+    }
 });
