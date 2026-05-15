@@ -43,8 +43,10 @@ Este archivo sirve como referencia central para mantener la coherencia en el des
     - **Efecto Niebla**: Sección que inicia **solo con texto**. Usa fotos específicas para móvil desde `images/efecto/vertical/` (01-Izquierda Superior, 02-Derecha Central, 03-Izquierda Inferior) que se revelan gradualmente con velocidad uniforme vinculada al scroll.
     - **Indicadores**: `#phi-scroll-indicator` bajado a `1.5rem` para no interferir con el texto.
 - **Social Proof / Testimonios**: 
+    - **Equilibrio Visual**: Tres testimonios (DJ Rúa, Entre Suspiro y Suspiro, Buen Consejo) con longitudes similares (~330 caracteres) para mantener la simetría.
     - **Puente Visual**: Línea de gradiente vertical (`md:hidden`) exclusiva para móvil para guiar el scroll tras la frase de servicios.
     - **Compactación**: Espaciado reducido (`pb-0` / `pt-16` en móvil, `pb-12` / `pt-20` en escritorio) para asegurar un flujo continuo y evitar la sensación de "fin de página".
+- **Carrusel Móvil**: Sistema de bucle infinito con GSAP que muestra 3 logos simultáneamente en móviles, eliminando cualquier desplazamiento horizontal indeseado.
 - **Navegación**: Menú lateral desplegable para dispositivos móviles controlado por `js/main.js`.
 
 ## Componentes Técnicos Operativos
@@ -58,15 +60,17 @@ Este archivo sirve como referencia central para mantener la coherencia en el des
 - **Lightbox Pro**: 
     - Visualización a pantalla completa.
     - **Sistema de Zoom**: Clic en imagen para ampliar (escala 1.5x). Cursores dinámicos (`zoom-in` / `zoom-out`).
-- **Carrusel de Clientes**: Sistema interactivo en el inicio que destaca logos mediante escalado y opacidad exclusivamente por hover.
-- **GSAP & ScrollTrigger**: Utilizado en la página de Inicio para animaciones complejas vinculadas al scroll (revelado de texto progresivo y efectos de desenfoque/parallax en imágenes de fondo).
+- **Carrusel de Clientes**: 
+    - **Escritorio**: Sistema interactivo que destaca logos mediante escalado y opacidad por hover.
+    - **Móvil**: Carrusel infinito automático con GSAP que muestra 3 logos a la vez, resolviendo problemas de desbordamiento horizontal.
+- **GSAP & ScrollTrigger**: Utilizado en el Inicio para animaciones de scroll y el carrusel infinito móvil.
 - **Rutas**: Siempre relativas (ej. `images/gastronomia/...`).
 - **Sistema de Gestión de Orden**: "Nomenclatura Secuencial". El HTML está configurado del 01 al XX. El usuario cambia el orden renombrando los archivos locales.
 
 ## Estado del Proyecto
 - **Sobre mí**: Completada. Texto biográfico justificado para mayor legibilidad. Menú móvil operativo.
 - **Contacto**: Estructura de página lista. Información de ubicación actualizada a "Madrid, España". Formulario pendiente de integración con servicio de envío (ej. Formspree) o futura migración a WordPress.
-- **Inicio**: Completada y optimizada. Hero banner full-screen, sección Filosofía dinámica y carrusel de clientes actualizado (Buen Consejo y DJ Rúa incluidos). Se ha eliminado la frase de servicios para un diseño más directo, manteniendo el puente visual móvil.
+- **Inicio**: Completada y optimizada. Hero banner full-screen, sección Filosofía dinámica y carrusel de clientes actualizado (Buen Consejo y DJ Rúa incluidos). Se ha corregido el desplazamiento lateral en móvil y se han equilibrado los testimonios para una estética simétrica.
 - **Videografía**: Completada y optimizada. Incluye sección especial para **Mirada 21 Media Lab** con grid de 3 vídeos verticales (9:16) enlazados a Instagram. Menú móvil operativo.
 - **Global**: Footer unificado en las 8 páginas del sitio con logo blanco, iconos de Instagram/WhatsApp, ubicación (Madrid, España) y email. Sistema de "Fade-in" en carga consistente.
 
