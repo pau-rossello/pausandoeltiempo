@@ -66,10 +66,12 @@ Este archivo sirve como referencia central para mantener la coherencia en el des
 - **GSAP & ScrollTrigger**: Utilizado en el Inicio para animaciones de scroll y el carrusel infinito móvil.
 - **Rutas**: Siempre relativas (ej. `images/gastronomia/...`).
 - **Sistema de Gestión de Orden**: "Nomenclatura Secuencial". El HTML está configurado del 01 al XX. El usuario cambia el orden renombrando los archivos locales.
+- **Validación de Formularios**: Lógica personalizada en `js/main.js` que evita validaciones nativas del navegador (`novalidate`). Mensajes de error y éxito con estética Zen que aparecen sobre el botón de envío sin romper el layout.
+- **SEO & Accesibilidad**: Textos `alt` descriptivos implementados en todas las imágenes clave (logos, hero, portadas y perfil) para mejorar el posicionamiento y la navegación con lectores de pantalla.
 
 ## Estado del Proyecto
 - **Sobre mí**: Completada. Texto biográfico justificado para mayor legibilidad. Menú móvil operativo.
-- **Contacto**: Estructura de página lista. Información de ubicación actualizada a "Madrid, España". Formulario pendiente de integración con servicio de envío (ej. Formspree) o futura migración a WordPress.
+- **Contacto**: Completada y funcional (UI). Incluye validación manual y mensajes de éxito/error personalizados ("Tu historia ya está en proceso de convertirse en imágenes"). Formulario preparado para futura integración con backend o WordPress.
 - **Inicio**: Completada y optimizada. Hero banner full-screen, sección Filosofía dinámica y carrusel de clientes actualizado (Buen Consejo y DJ Rúa incluidos). Se ha corregido el desplazamiento lateral en móvil y se han equilibrado los testimonios para una estética simétrica.
 - **Videografía**: Completada y optimizada. Incluye sección especial para **Mirada 21 Media Lab** con grid de 3 vídeos verticales (9:16) enlazados a Instagram. Menú móvil operativo.
 - **Global**: Footer unificado en las 8 páginas del sitio con logo blanco, iconos de Instagram/WhatsApp, ubicación (Madrid, España) y email. Sistema de "Fade-in" en carga consistente.
