@@ -46,8 +46,7 @@ Este archivo sirve como referencia central para mantener la coherencia en el des
     - **Equilibrio Visual**: Tres testimonios (DJ Rúa, Entre Suspiro y Suspiro, Buen Consejo) con longitudes similares (~330 caracteres) para mantener la simetría.
     - **Puente Visual**: Línea de gradiente vertical (`md:hidden`) exclusiva para móvil para guiar el scroll tras la frase de servicios.
     - **Compactación**: Espaciado reducido (`pb-0` / `pt-16` en móvil, `pb-12` / `pt-20` en escritorio) para asegurar un flujo continuo y evitar la sensación de "fin de página".
-- **Carrusel Móvil**: Sistema de bucle infinito con GSAP que muestra 3 logos simultáneamente en móviles, eliminando cualquier desplazamiento horizontal indeseado.
-- **Navegación**: Menú lateral desplegable para dispositivos móviles controlado por `js/main.js`.
+- **Navegación**: Menú lateral desplegable para dispositivos móviles. Incluye un sistema de **resaltado dinámico** (`active-nav-link`) que indica la página actual en tiempo real tanto en escritorio como en móvil.
 
 ## Componentes Técnicos Operativos
 - **Header**: Fijo (`fixed`), fondo blanco, logo `logo_black.png`.
@@ -63,18 +62,16 @@ Este archivo sirve como referencia central para mantener la coherencia en el des
 - **Carrusel de Clientes**: 
     - **Escritorio**: Sistema interactivo que destaca logos mediante escalado y opacidad por hover.
     - **Móvil**: Carrusel infinito automático con GSAP que muestra 3 logos a la vez, resolviendo problemas de desbordamiento horizontal.
-- **GSAP & ScrollTrigger**: Utilizado en el Inicio para animaciones de scroll y el carrusel infinito móvil.
-- **Rutas**: Siempre relativas (ej. `images/gastronomia/...`).
-- **Sistema de Gestión de Orden**: "Nomenclatura Secuencial". El HTML está configurado del 01 al XX. El usuario cambia el orden renombrando los archivos locales.
-- **Validación de Formularios**: Lógica personalizada en `js/main.js` que evita validaciones nativas del navegador (`novalidate`). Mensajes de error y éxito con estética Zen que aparecen sobre el botón de envío sin romper el layout.
-- **SEO & Accesibilidad**: Textos `alt` descriptivos implementados en todas las imágenes clave (logos, hero, portadas y perfil) para mejorar el posicionamiento y la navegación con lectores de pantalla.
+- **SEO & Accesibilidad**: 
+    - Textos `alt` descriptivos en el 100% de las imágenes del sitio.
+    - Jerarquía de encabezados `<h1>` unificada por página.
+    - Meta descriptions personalizadas en todas las páginas.
+- **Rendimiento Optimizada**:
+    - `loading="lazy"` en todas las imágenes por debajo del pliegue.
+    - Primera carga optimizada eliminando lazy loading de elementos LCP (primeras fotos de galerías).
+    - `IntersectionObserver` en `js/main.js` configurado con `threshold: 0.01` y fallback de visibilidad inmediata para asegurar que el contenido aparezca sin retraso en PC y Móvil.
 
-## Estado del Proyecto
-- **Sobre mí**: Completada. Texto biográfico justificado para mayor legibilidad. Menú móvil operativo.
-- **Contacto**: Completada y funcional (UI). Incluye validación manual y mensajes de éxito/error personalizados ("Tu historia ya está en proceso de convertirse en imágenes"). Formulario preparado para futura integración con backend o WordPress.
-- **Inicio**: Completada y optimizada. Hero banner full-screen, sección Filosofía dinámica y carrusel de clientes actualizado (Buen Consejo y DJ Rúa incluidos). Se ha corregido el desplazamiento lateral en móvil y se han equilibrado los testimonios para una estética simétrica.
-- **Videografía**: Completada y optimizada. Incluye sección especial para **Mirada 21 Media Lab** con grid de 3 vídeos verticales (9:16) enlazados a Instagram. Menú móvil operativo.
-- **Global**: Footer unificado en las 8 páginas del sitio con logo blanco, iconos de Instagram/WhatsApp, ubicación (Madrid, España) y email. Sistema de "Fade-in" en carga consistente.
+- **Estado Final de Optimización**: El portfolio ha pasado una auditoría final de rendimiento, SEO y UX. Todas las páginas están optimizadas para una carga rápida y una visibilidad inmediata.
 
 ## Estructura de Archivos
 - **/css/style.css**: Estilos base, animaciones y lógica de zoom del lightbox.
