@@ -235,25 +235,23 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
-    // --- Contact Form Handling ---
+    // --- Contact Form Handling (Web3Forms) ---
     const contactForm = document.getElementById('contact-form');
     const successMessage = document.getElementById('success-message');
     const errorMessage = document.getElementById('error-message');
 
     if (contactForm && successMessage && errorMessage) {
-        contactForm.addEventListener('submit', (e) => {
+        contactForm.addEventListener('submit', async (e) => {
             e.preventDefault();
-            
-            // Manual Validation
-            const formData = new FormData(contactForm);
-            const isComplete = Array.from(formData.values()).every(value => value.trim() !== '');
 
-            if (!isComplete) {
-                // Show error message
+            // Manual validation: check nombre, email, mensaje fields only
+            const nombre = contactForm.querySelector('[name="nombre"]').value.trim();
+            const email = contactForm.querySelector('[name="email"]').value.trim();
+            const mensaje = contactForm.querySelector('[name="mensaje"]').value.trim();
+
+            if (!nombre || !email || !mensaje) {
                 errorMessage.classList.remove('hidden');
                 errorMessage.classList.add('opacity-100');
-                
-                // Optional: shake effect or just highlight
                 setTimeout(() => {
                     errorMessage.classList.add('opacity-0');
                     setTimeout(() => {
@@ -264,24 +262,57 @@ document.addEventListener('DOMContentLoaded', () => {
                 return;
             }
 
-            // If complete, proceed to success
-            errorMessage.classList.add('hidden');
-            
-            // Show success message
-            successMessage.classList.remove('hidden');
-            successMessage.classList.add('opacity-100');
-            
-            // Clear the form
-            contactForm.reset();
-            
-            // Optional: Hide success message after a while
-            setTimeout(() => {
-                successMessage.classList.add('opacity-0');
+            // Disable submit button during request
+            const submitBtn = contactForm.querySelector('[type="submit"]');
+            if (submitBtn) {
+                submitBtn.disabled = true;
+                submitBtn.textContent = 'Enviando...';
+            }
+
+            try {
+                const formData = new FormData(contactForm);
+                const response = await fetch('https://api.web3forms.com/submit', {
+                    method: 'POST',
+                    body: formData
+                });
+                const result = await response.json();
+
+                if (result.success) {
+                    // Show success message
+                    errorMessage.classList.add('hidden');
+                    successMessage.classList.remove('hidden');
+                    successMessage.classList.add('opacity-100');
+                    contactForm.reset();
+
+                    setTimeout(() => {
+                        successMessage.classList.add('opacity-0');
+                        setTimeout(() => {
+                            successMessage.classList.add('hidden');
+                            successMessage.classList.remove('opacity-0', 'opacity-100');
+                        }, 500);
+                    }, 6000);
+                } else {
+                    throw new Error(result.message || 'Error al enviar');
+                }
+            } catch (err) {
+                // Show generic error
+                errorMessage.textContent = 'Hubo un problema al enviar el mensaje. Por favor, inténtalo de nuevo.';
+                errorMessage.classList.remove('hidden');
+                errorMessage.classList.add('opacity-100');
                 setTimeout(() => {
-                    successMessage.classList.add('hidden');
-                    successMessage.classList.remove('opacity-0', 'opacity-100');
-                }, 500);
-            }, 6000);
+                    errorMessage.classList.add('opacity-0');
+                    setTimeout(() => {
+                        errorMessage.classList.add('hidden');
+                        errorMessage.classList.remove('opacity-0', 'opacity-100');
+                        errorMessage.textContent = 'Cada detalle es importante para contar una historia. Por favor, completa todos los campos.';
+                    }, 300);
+                }, 5000);
+            } finally {
+                if (submitBtn) {
+                    submitBtn.disabled = false;
+                    submitBtn.textContent = 'Enviar';
+                }
+            }
         });
     }
 });
