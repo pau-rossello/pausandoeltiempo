@@ -65,7 +65,7 @@ Este archivo sirve como referencia central para mantener la coherencia en el des
     - Textos `alt` descriptivos en el 100% de las imágenes del sitio.
     - Jerarquía de encabezados `<h1>` unificada por página.
     - Meta descriptions personalizadas en todas las páginas.
-- **Reproducción Audiovisual**: Integración responsiva de reproductores externos (Vimeo en contenedor `aspect-video` con `loading="lazy"`) y enlaces externos a plataformas oficiales (YouTube, Vimeo, redes sociales).
+- **Reproducción Audiovisual / Video Modal**: Mantiene la coherencia visual con la estética de tarjetas principales de vídeo (imagen de portada estática sin escala, transición suave de opacidad y botón de reproducción al pasar el cursor). Al hacer clic en la imagen o en "Ver Proyecto", se despliega un reproductor modal cinematográfico a pantalla completa con el vídeo incrustado (Vimeo con autoplay), con adaptación dinámica a formatos horizontales (16:9) y verticales (9:16 para Reels/TikTok), control de cierre accesible (botón `×`, clic fuera o tecla `Escape`) y detención automática de reproducción y audio al cerrar.
 - **Rendimiento Optimizada**:
     - `loading="lazy"` en todas las imágenes por debajo del pliegue.
     - Primera carga optimizada eliminando lazy loading de elementos LCP (primeras fotos de galerías).
