@@ -29,7 +29,6 @@ Este archivo sirve como referencia central para mantener la coherencia en el des
     - Estilo común: Itálica para citas descriptivas.
 
 ### Espaciados y Layout
-### Espaciados y Layout
 - **Contenedor**: `max-w-7xl` (1280px aprox).
 - **Márgenes**: Amplios para crear "aire" (ej. `pt-32` para separación del header).
 - **Galería Fotográfica**: Sistema de columnas masonry (`columns-1 md:columns-2 lg:columns-3`) con `gap-8` para respetar proporciones originales.
@@ -66,6 +65,7 @@ Este archivo sirve como referencia central para mantener la coherencia en el des
     - Textos `alt` descriptivos en el 100% de las imágenes del sitio.
     - Jerarquía de encabezados `<h1>` unificada por página.
     - Meta descriptions personalizadas en todas las páginas.
+- **Reproducción Audiovisual**: Integración responsiva de reproductores externos (Vimeo en contenedor `aspect-video` con `loading="lazy"`) y enlaces externos a plataformas oficiales (YouTube, Vimeo, redes sociales).
 - **Rendimiento Optimizada**:
     - `loading="lazy"` en todas las imágenes por debajo del pliegue.
     - Primera carga optimizada eliminando lazy loading de elementos LCP (primeras fotos de galerías).
