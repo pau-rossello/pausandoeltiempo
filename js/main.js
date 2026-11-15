@@ -102,7 +102,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 e.preventDefault();
                 e.stopPropagation();
                 
-                const img = item.querySelector('img');
+                const img = item.tagName === 'IMG' ? item : item.querySelector('img');
                 if (img && img.src) {
                     lightboxImg.src = img.src;
                     lightbox.style.display = 'flex';
@@ -137,18 +137,96 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // Video Modal Logic
+    if (!window._videoModalInitialized) {
+        window._videoModalInitialized = true;
+        const videoModal = document.getElementById('video-modal');
+        const videoModalIframe = document.getElementById('video-modal-iframe');
+        const videoModalClose = document.getElementById('video-modal-close');
+        const videoModalContainer = videoModal ? videoModal.querySelector('.video-modal-container') : null;
+
+        if (videoModal && videoModalIframe) {
+            videoModal.style.display = 'none';
+            videoModal.classList.remove('hidden');
+
+            const openVideoModal = (url, isVertical = false) => {
+                if (videoModalContainer) {
+                    if (isVertical) {
+                        videoModalContainer.className = 'video-modal-container relative w-full max-w-[340px] md:max-w-[380px] aspect-[9/16] max-h-[85vh] bg-black shadow-2xl overflow-hidden rounded-md';
+                    } else {
+                        videoModalContainer.className = 'video-modal-container relative w-full max-w-5xl aspect-video bg-black shadow-2xl overflow-hidden';
+                    }
+                }
+                videoModalIframe.src = url;
+                videoModal.style.display = 'flex';
+                document.body.style.overflow = 'hidden';
+            };
+
+            const closeVideoModal = () => {
+                videoModal.style.display = 'none';
+                videoModalIframe.src = '';
+                document.body.style.overflow = '';
+            };
+
+            document.addEventListener('click', (e) => {
+                const trigger = e.target.closest('.video-modal-trigger');
+                if (trigger) {
+                    const videoUrl = trigger.getAttribute('data-video-url');
+                    const isVertical = trigger.getAttribute('data-aspect') === 'vertical';
+                    if (videoUrl) {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        openVideoModal(videoUrl, isVertical);
+                    }
+                } else if (e.target === videoModal || e.target === videoModalClose) {
+                    closeVideoModal();
+                }
+            });
+
+            if (videoModalClose) {
+                videoModalClose.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    closeVideoModal();
+                });
+            }
+
+            window.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && videoModal.style.display === 'flex') {
+                    closeVideoModal();
+                }
+            });
+        }
+    }
+
     // Logo Carousel: Removed automatic highlighting logic as per user request.
     // Interaction is now handled purely via CSS hover effects.
 
-    // Smooth scroll for anchor links
+    // Anchor links handling
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
+            const href = this.getAttribute('href');
+            if (!href || href === '#') return;
+
             e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
+            const target = document.querySelector(href);
             if (target) {
-                target.scrollIntoView({
-                    behavior: 'smooth'
-                });
+                if (href === '#services') {
+                    // Direct jump to services to avoid scrolling through the philosophy animation
+                    target.scrollIntoView({ behavior: 'auto' });
+
+                    // Immediately update header styling
+                    if (header) {
+                        header.classList.remove('bg-transparent', 'py-4', 'md:py-6');
+                        header.classList.add('bg-white', 'py-2', 'md:py-4', 'shadow-md');
+                        if (headerContainer) headerContainer.classList.replace('border-white/20', 'border-zen-grey');
+                        if (headerLogo) headerLogo.src = 'images/logo_black.png';
+                        if (headerNav) headerNav.classList.replace('text-white', 'text-zen-dark');
+                    }
+                } else {
+                    target.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
             }
         });
     });
