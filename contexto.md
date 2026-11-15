@@ -36,7 +36,7 @@ Este archivo sirve como referencia central para mantener la coherencia en el des
 
 ### Adaptabilidad (Responsive Design)
 - **Breakpoint Principal**: 768px.
-- **Hero Banner (Mobile)**: Altura `100vh` (`100dvh`). Indicador de scroll activo pero desplazado al extremo inferior (`bottom: 0.5rem`) para no interferir con botones centrales. Diseño tipo "carta de presentación" para impacto inicial.
+- **Hero Banner**: Botón CTA "Comenzar" configurado con salto directo e instantáneo hacia `#services` (Fotografía y Videografía), evitando acelerar o pasar de manera brusca por la animación de scroll de la sección Filosofía. En móvil, altura `100vh` (`100dvh`) con indicador de scroll desplazado al extremo inferior (`bottom: 0.5rem`).
 - **Sección Filosofía (Mobile)**: 
     - **Fluidez**: Scroll ajustado a `145vh` para eliminar huecos blancos innecesarios.
     - **Efecto Niebla**: Sección que inicia **solo con texto**. Usa fotos específicas para móvil desde `images/efecto/vertical/` (01-Izquierda Superior, 02-Derecha Central, 03-Izquierda Inferior) que se revelan gradualmente con velocidad uniforme vinculada al scroll.
