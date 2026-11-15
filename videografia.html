@@ -582,7 +582,80 @@
         <button class="absolute top-6 right-6 text-white text-4xl">&times;</button>
     </div>
 
-    <script src="js/main.js"></script>
+    <!-- Video Modal Script (Self-contained for GitHub Pages / CDN resilience) -->
+    <script>
+            (function () {
+                if (window._videoModalInitialized) return;
+                window._videoModalInitialized = true;
+
+                function initVideoModal() {
+                    var modal = document.getElementById('video-modal');
+                    var iframe = document.getElementById('video-modal-iframe');
+                    var closeBtn = document.getElementById('video-modal-close');
+                    var container = modal ? modal.querySelector('.video-modal-container') : null;
+
+                    if (!modal || !iframe) return;
+
+                    modal.style.display = 'none';
+                    modal.classList.remove('hidden');
+
+                    function openModal(url, isVertical) {
+                        if (container) {
+                            if (isVertical) {
+                                container.className = 'video-modal-container relative w-full max-w-[340px] md:max-w-[380px] aspect-[9/16] max-h-[85vh] bg-black shadow-2xl overflow-hidden rounded-md';
+                            } else {
+                                container.className = 'video-modal-container relative w-full max-w-5xl aspect-video bg-black shadow-2xl overflow-hidden';
+                            }
+                        }
+                        iframe.src = url;
+                        modal.style.display = 'flex';
+                        document.body.style.overflow = 'hidden';
+                    }
+
+                    function closeModal() {
+                        modal.style.display = 'none';
+                        iframe.src = '';
+                        document.body.style.overflow = '';
+                    }
+
+                    document.addEventListener('click', function (e) {
+                        var trigger = e.target.closest('.video-modal-trigger');
+                        if (trigger) {
+                            var url = trigger.getAttribute('data-video-url');
+                            var isVertical = trigger.getAttribute('data-aspect') === 'vertical';
+                            if (url) {
+                                e.preventDefault();
+                                e.stopPropagation();
+                                openModal(url, isVertical);
+                            }
+                        } else if (e.target === modal || e.target === closeBtn) {
+                            closeModal();
+                        }
+                    });
+
+                    if (closeBtn) {
+                        closeBtn.addEventListener('click', function (e) {
+                            e.stopPropagation();
+                            closeModal();
+                        });
+                    }
+
+                    window.addEventListener('keydown', function (e) {
+                        if (e.key === 'Escape' && modal.style.display === 'flex') {
+                            closeModal();
+                        }
+                    });
+                }
+
+                if (document.readyState === 'loading') {
+                    document.addEventListener('DOMContentLoaded', initVideoModal);
+                } else {
+                    initVideoModal();
+                }
+            })();
+    </script>
+
+    <script src="js/main.js?v=2.2"></script>
 </body>
 
 </html>
