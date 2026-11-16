@@ -4,9 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pausando el Tiempo | Pau Rosselló</title>
+    <title>Pausando el Tiempo | Pau Rosselló - Fotógrafo y Videógrafo</title>
     <meta name="description"
-        content="Portfolio audiovisual de Pau Rosselló. Fotógrafo y videógrafo especializado en gastronomía, lifestyle y eventos en Madrid, España. Capturando momentos que perduran para siempre.">
+        content="Portfolio audiovisual de Pau Rosselló. Fotógrafo y videógrafo especializado en gastronomía, lifestyle y eventos en Madrid, España. Capturando momentos que duran para siempre.">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="css/style.css">
     <!-- GSAP & ScrollTrigger -->
@@ -43,8 +43,8 @@
                 <a href="sobre-mi.html" class="hover:text-gray-400 transition-colors">Sobre mí</a>
                 <a href="contacto.html" class="hover:text-gray-400 transition-colors">Contacto</a>
             </nav>
-            <button id="menu-toggle" class="md:hidden p-2"><svg class="w-6 h-6" fill="none" stroke="currentColor"
-                    viewBox="0 0 24 24">
+            <button id="menu-toggle" class="md:hidden p-2 text-white"><svg class="w-6 h-6" fill="none"
+                    stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7">
                     </path>
                 </svg></button>
@@ -66,20 +66,31 @@
     </div>
 
     <!-- Hero Section -->
-    <section class="relative h-screen w-full overflow-hidden bg-black">
+    <section class="relative h-screen w-full overflow-hidden bg-black flex items-center justify-center">
         <!-- Background Image -->
         <img src="images/hero_banner.jpg" alt="Composición cinematográfica de fondo - Pausando el Tiempo"
             class="absolute inset-0 w-full h-full object-cover opacity-40 scale-105 animate-slow-zoom">
         <div class="absolute inset-0 bg-black/20"></div>
 
         <!-- Hero Content -->
-        <div class="relative z-10 h-full flex flex-col items-center justify-center text-center px-6">
-            <h1 class="text-white text-5xl md:text-8xl font-sans font-black tracking-tighter uppercase mb-6 fade-in">
+        <div class="relative z-10 max-w-5xl mx-auto flex flex-col items-center justify-center text-center px-6">
+            <!-- Overline -->
+            <p class="text-white/60 font-sans text-[10px] uppercase tracking-[0.5em] mb-6 fade-in">
+                Fotógrafo &amp; Videógrafo · Madrid
+            </p>
+
+            <!-- Main Title -->
+            <h1 class="text-white text-5xl md:text-8xl font-sans font-black tracking-tighter uppercase mb-6 fade-in"
+                style="transition-delay: 0.1s">
                 PAU ROSSELLÓ
             </h1>
+
+            <!-- Subtitle -->
             <p class="text-white/80 font-serif italic text-lg md:text-2xl mb-12 fade-in" style="transition-delay: 0.2s">
-                Capturando momentos que perduran para siempre.
+                Historias con sensibilidad, visión y emoción.
             </p>
+
+            <!-- CTA Button -->
             <a href="#services"
                 class="group flex items-center space-x-4 border border-white px-10 py-5 text-white uppercase tracking-[0.4em] font-bold text-xs hover:bg-white hover:text-black transition-all fade-in"
                 style="transition-delay: 0.4s">
@@ -101,28 +112,28 @@
     <!-- Value Proposition / Philosophy Section -->
     <section id="philosophy" class="relative h-[225vh] bg-white">
         <div class="sticky top-0 h-screen w-full flex items-center justify-center overflow-hidden">
-            <!-- Background floating photos (pushed to edges to avoid center text) -->
+            <!-- Background floating photos -->
             <div id="phi-images" class="absolute inset-0 pointer-events-none">
                 <img src="images/efecto/efecto_01.jpg" alt="Detalle artístico fotográfico 01"
-                    class="phi-photo absolute w-48 md:w-64 opacity-0 blur-sm" style="top: 8%; left: 2%;"
+                    class="phi-photo absolute w-48 md:w-64 opacity-0 blur-sm shadow-xl" style="top: 8%; left: 2%;"
                     data-speed="0.2">
                 <img src="images/efecto/efecto_02.jpg" alt="Detalle artístico fotográfico 02"
-                    class="phi-photo absolute w-40 md:w-56 opacity-0 blur-sm" style="top: 75%; left: 4%;"
+                    class="phi-photo absolute w-40 md:w-56 opacity-0 blur-sm shadow-xl" style="top: 75%; left: 4%;"
                     data-speed="0.5">
                 <img src="images/efecto/efecto_03.jpg" alt="Detalle artístico fotográfico 03"
-                    class="phi-photo absolute w-56 md:w-80 opacity-0 blur-sm" style="top: 12%; right: -2%;"
+                    class="phi-photo absolute w-56 md:w-80 opacity-0 blur-sm shadow-xl" style="top: 12%; right: -2%;"
                     data-speed="0.3">
                 <img src="images/efecto/efecto_04.jpg" alt="Detalle artístico fotográfico 04"
-                    class="phi-photo absolute w-44 md:w-60 opacity-0 blur-sm" style="bottom: 8%; right: 18%;"
+                    class="phi-photo absolute w-44 md:w-60 opacity-0 blur-sm shadow-xl" style="bottom: 8%; right: 18%;"
                     data-speed="0.6">
                 <img src="images/efecto/efecto_05.jpg" alt="Detalle artístico fotográfico 05"
-                    class="phi-photo absolute w-52 md:w-72 opacity-0 blur-sm" style="top: 45%; right: 4%;"
+                    class="phi-photo absolute w-52 md:w-72 opacity-0 blur-sm shadow-xl" style="top: 45%; right: 4%;"
                     data-speed="0.1">
                 <img src="images/efecto/efecto_06.jpg" alt="Detalle artístico fotográfico 06"
-                    class="phi-photo absolute w-40 md:w-52 opacity-0 blur-sm" style="bottom: 12%; left: 12%;"
+                    class="phi-photo absolute w-40 md:w-52 opacity-0 blur-sm shadow-xl" style="bottom: 12%; left: 12%;"
                     data-speed="0.4">
                 <img src="images/efecto/efecto_07.jpg" alt="Detalle artístico fotográfico 07"
-                    class="phi-photo absolute w-48 md:w-64 opacity-0 blur-sm" style="top: 80%; right: 25%;"
+                    class="phi-photo absolute w-48 md:w-64 opacity-0 blur-sm shadow-xl" style="top: 80%; right: 25%;"
                     data-speed="0.25">
             </div>
 
@@ -138,7 +149,7 @@
                 <div class="w-12 h-[1px] bg-zen-dark mx-auto mb-10 opacity-30 relative z-20"></div>
                 <p class="text-xs md:text-sm text-gray-500 leading-loose max-w-xl mx-auto font-sans uppercase tracking-widest"
                     style="text-shadow: 0 0 15px rgba(255,255,255,0.9), 0 0 30px rgba(255,255,255,1);">
-                    Pausando el Tiempo
+                    Pau Rosselló
                 </p>
             </div>
 
@@ -149,60 +160,221 @@
         </div>
     </section>
 
-    <main id="services" class="pt-24 pb-0 md:pb-12">
+    <!-- Disciplines / Services Section -->
+    <main id="services" class="pt-24 pb-16 md:pb-24">
         <div class="max-w-7xl mx-auto px-6">
-            <!-- Site Logo/Title Section -->
+            <!-- Header for Services -->
             <div class="text-center mb-16 fade-in">
-                <h2 class="text-sm md:text-base tracking-[0.4em] font-sans font-bold text-gray-400 uppercase mb-2">
-                    FOTÓGRAFO - VIDEÓGRAFO</h2>
-                <div class="w-20 h-[1px] bg-zen-dark mx-auto mt-4"></div>
+                <h2 class="text-xs md:text-sm tracking-[0.5em] font-sans font-bold text-gray-400 uppercase mb-3">
+                    DISCIPLINAS AUDIOVISUALES</h2>
+                <div class="w-16 h-[1px] bg-zen-dark mx-auto mt-4 opacity-30"></div>
             </div>
 
-            <!-- Selection Cards -->
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+            <!-- 2 Large Portal Cards -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-5xl mx-auto">
                 <!-- Videografía Card -->
-                <a href="videografia.html" class="group relative overflow-hidden aspect-[4/3] bg-gray-100 fade-in">
+                <a href="videografia.html"
+                    class="group relative overflow-hidden aspect-[4/3] bg-gray-100 shadow-md fade-in block">
                     <img src="images/cover_videografia.jpg" alt="Portada de la sección Videografía" loading="lazy"
-                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale-[bg-gray-100] group-hover:grayscale-0">
+                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
                     <div
-                        class="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition-colors flex items-center justify-center">
-                        <div class="text-center text-white">
-                            <h3 class="text-2xl md:text-3xl font-sans font-bold uppercase tracking-[0.2em] mb-4">
+                        class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/35 to-black/20 group-hover:from-black/75 transition-colors flex flex-col justify-end p-8 text-white">
+                        <div>
+                            <h3 class="text-2xl md:text-3xl font-sans font-bold uppercase tracking-[0.2em] mb-2">
                                 Videografía</h3>
+                            <p class="text-xs font-serif italic text-white/80 mb-4 line-clamp-2">Cortometrajes, podcasts
+                                y producción para redes sociales.</p>
                             <span
-                                class="inline-block border border-white px-6 py-2 text-[10px] uppercase tracking-widest group-hover:bg-white group-hover:text-black transition-all">Ver
-                                proyectos</span>
+                                class="inline-flex items-center space-x-2 text-[10px] uppercase tracking-widest font-bold border-b border-white pb-1 group-hover:text-gray-300 group-hover:border-gray-300 transition-all">
+                                <span>Ver proyectos de vídeo</span>
+                                <span>→</span>
+                            </span>
                         </div>
                     </div>
                 </a>
 
                 <!-- Fotografía Card -->
-                <a href="fotografia.html" class="group relative overflow-hidden aspect-[4/3] bg-gray-100 fade-in"
+                <a href="fotografia.html"
+                    class="group relative overflow-hidden aspect-[4/3] bg-gray-100 shadow-md fade-in block"
                     style="transition-delay: 0.1s">
                     <img src="images/cover_fotografia.jpg" alt="Portada de la sección Fotografía" loading="lazy"
-                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale-[bg-gray-100] group-hover:grayscale-0">
+                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
                     <div
-                        class="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition-colors flex items-center justify-center">
-                        <div class="text-center text-white">
-                            <h3 class="text-2xl md:text-3xl font-sans font-bold uppercase tracking-[0.2em] mb-4">
+                        class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/35 to-black/20 group-hover:from-black/75 transition-colors flex flex-col justify-end p-8 text-white">
+                        <div>
+                            <h3 class="text-2xl md:text-3xl font-sans font-bold uppercase tracking-[0.2em] mb-2">
                                 Fotografía</h3>
+                            <p class="text-xs font-serif italic text-white/80 mb-4 line-clamp-2">Especialidad
+                                gastronómica y cobertura de eventos.</p>
                             <span
-                                class="inline-block border border-white px-6 py-2 text-[10px] uppercase tracking-widest group-hover:bg-white group-hover:text-black transition-all">Explorar
-                                galerías</span>
+                                class="inline-flex items-center space-x-2 text-[10px] uppercase tracking-widest font-bold border-b border-white pb-1 group-hover:text-gray-300 group-hover:border-gray-300 transition-all">
+                                <span>Explorar galerías fotográficas</span>
+                                <span>→</span>
+                            </span>
                         </div>
                     </div>
                 </a>
             </div>
-
-            <!-- Bottom Quote -->
-            <div class="text-center mt-24 mb-12 md:mb-0 fade-in" style="transition-delay: 0.3s">
-                <!-- Visual bridge only on mobile to guide the scroll -->
-                <div
-                    class="md:hidden w-[1px] h-12 bg-gradient-to-b from-zen-dark to-transparent mx-auto opacity-20 mt-6">
-                </div>
-            </div>
         </div>
     </main>
+
+    <!-- Featured Works Showcase -->
+    <section class="py-20 md:py-28 bg-gray-50/70 border-t border-zen-grey">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 fade-in">
+                <div>
+                    <h2 class="text-xs md:text-sm tracking-[0.5em] font-sans font-bold text-gray-400 uppercase mb-3">
+                        PROYECTOS SELECCIONADOS</h2>
+                    <p class="text-2xl md:text-4xl font-serif italic text-zen-dark">
+                        Una muestra de obras recientes
+                    </p>
+                </div>
+                <div class="mt-4 md:mt-0">
+                    <p class="text-xs font-sans tracking-widest text-gray-500 uppercase">
+                        Gastronomía · Cortometrajes · RRSS · Podcasts
+                    </p>
+                </div>
+            </div>
+
+            <!-- 6 Editorial Cards Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- 1. Gastronomía -->
+                <a href="gastronomia.html"
+                    class="group relative overflow-hidden aspect-[4/5] bg-gray-100 shadow-sm fade-in flex flex-col justify-end">
+                    <img src="images/gastronomia/gastro_01.jpg" alt="Fotografía Gastronómica de Autor" loading="lazy"
+                        class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent opacity-90 group-hover:opacity-75 transition-opacity">
+                    </div>
+                    <div class="relative z-10 p-6 text-white">
+                        <span
+                            class="text-[9px] uppercase tracking-[0.3em] font-bold text-white/70 block mb-2">Fotografía</span>
+                        <h3 class="text-xl font-sans font-bold uppercase tracking-wider mb-2">GASTRONÓMICA
+                        </h3>
+                        <p class="text-xs font-serif italic text-white/80 line-clamp-2">Capturando el color y
+                            textura de la alta cocina.</p>
+                    </div>
+                </a>
+
+                <!-- 2. Dejando Huella (Video Modal) -->
+                <div class="video-modal-trigger group relative overflow-hidden aspect-[4/5] bg-gray-100 shadow-sm fade-in flex flex-col justify-end cursor-pointer"
+                    data-video-url="https://player.vimeo.com/video/1247085744?autoplay=1" role="button" tabindex="0"
+                    aria-label="Reproducir podcast Dejando Huella">
+                    <img src="images/videografia/DejandoHuella/dejandohuella_04.webp" alt="Podcast Dejando Huella"
+                        loading="lazy"
+                        class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent opacity-90 group-hover:opacity-75 transition-opacity">
+                    </div>
+                    <!-- Play icon badge -->
+                    <div
+                        class="absolute top-4 right-4 w-10 h-10 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center text-white group-hover:bg-white group-hover:text-black transition-all">
+                        <svg class="w-5 h-5 ml-0.5" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M8 5v14l11-7z" />
+                        </svg>
+                    </div>
+                    <div class="relative z-10 p-6 text-white">
+                        <span class="text-[9px] uppercase tracking-[0.3em] font-bold text-white/70 block mb-2">Podcast
+                            · DoP</span>
+                        <h3 class="text-xl font-sans font-bold uppercase tracking-wider mb-2">'Dejando Huella'
+                        </h3>
+                        <p class="text-xs font-serif italic text-white/80 line-clamp-2">Dirección de fotografía e
+                            iluminación profesional.</p>
+                    </div>
+                </div>
+
+                <!-- 3. Entre Suspiro y Suspiro (Video Modal Vertical) -->
+                <div class="video-modal-trigger group relative overflow-hidden aspect-[4/5] bg-gray-100 shadow-sm fade-in flex flex-col justify-end cursor-pointer"
+                    data-video-url="https://player.vimeo.com/video/1247085936?autopause=0&player_id=0&app_id=58479&autoplay=1"
+                    data-aspect="vertical" role="button" tabindex="0"
+                    aria-label="Reproducir vídeo Entre Suspiro y Suspiro">
+                    <img src="images/videografia/EntreSuspiroYSuspiro/entresuspiroysuspiro_01.jpg"
+                        alt="Entre Suspiro y Suspiro - Contenido RRSS" loading="lazy"
+                        class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent opacity-90 group-hover:opacity-75 transition-opacity">
+                    </div>
+                    <!-- Play icon badge -->
+                    <div
+                        class="absolute top-4 right-4 w-10 h-10 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center text-white group-hover:bg-white group-hover:text-black transition-all">
+                        <svg class="w-5 h-5 ml-0.5" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M8 5v14l11-7z" />
+                        </svg>
+                    </div>
+                    <div class="relative z-10 p-6 text-white">
+                        <span class="text-[9px] uppercase tracking-[0.3em] font-bold text-white/70 block mb-2">Contenido
+                            RRSS</span>
+                        <h3 class="text-xl font-sans font-bold uppercase tracking-wider mb-2">Entre Suspiro y Suspiro
+                        </h3>
+                        <p class="text-xs font-serif italic text-white/80 line-clamp-2">Creación de
+                            piezas verticales para Instagram y TikTok.</p>
+                    </div>
+                </div>
+
+                <!-- 4. Noche de Luz (Video Modal) -->
+                <div class="video-modal-trigger group relative overflow-hidden aspect-[4/5] bg-gray-100 shadow-sm fade-in flex flex-col justify-end cursor-pointer"
+                    data-video-url="https://player.vimeo.com/video/1247019542?h=2b1fedbac5&autoplay=1" role="button"
+                    tabindex="0" aria-label="Reproducir cortometraje Noche de Luz">
+                    <img src="images/videografia/NocheDeLuz/bts_nochedeluz_02.webp" alt="Cortometraje Noche de Luz"
+                        loading="lazy"
+                        class="absolute inset-0 w-full h-full object-cover object-left transition-transform duration-700 group-hover:scale-105">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent opacity-90 group-hover:opacity-75 transition-opacity">
+                    </div>
+                    <div
+                        class="absolute top-4 right-4 w-10 h-10 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center text-white group-hover:bg-white group-hover:text-black transition-all">
+                        <svg class="w-5 h-5 ml-0.5" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M8 5v14l11-7z" />
+                        </svg>
+                    </div>
+                    <div class="relative z-10 p-6 text-white">
+                        <span
+                            class="text-[9px] uppercase tracking-[0.3em] font-bold text-white/70 block mb-2">Cortometraje
+                            · DoP</span>
+                        <h3 class="text-xl font-sans font-bold uppercase tracking-wider mb-2">'Noche de Luz'</h3>
+                        <p class="text-xs font-serif italic text-white/80 line-clamp-2">Felicitación navideña de la
+                            UFV.</p>
+                    </div>
+                </div>
+
+                <!-- 5. Eventos -->
+                <a href="eventos.html"
+                    class="group relative overflow-hidden aspect-[4/5] bg-gray-100 shadow-sm fade-in flex flex-col justify-end">
+                    <img src="images/eventos/eventos_01.jpg" alt="Fotografía de Eventos Sociales y Musicales"
+                        loading="lazy"
+                        class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent opacity-90 group-hover:opacity-75 transition-opacity">
+                    </div>
+                    <div class="relative z-10 p-6 text-white">
+                        <span
+                            class="text-[9px] uppercase tracking-[0.3em] font-bold text-white/70 block mb-2">Fotografía
+                            de eventos</span>
+                        <h3 class="text-xl font-sans font-bold uppercase tracking-wider mb-2">Actos & Celebraciones</h3>
+                        <p class="text-xs font-serif italic text-white/80 line-clamp-2">Documentando la emoción de
+                            grandes momentos.</p>
+                    </div>
+                </a>
+
+                <!-- 6. Sesiones de Retrato -->
+                <a href="sesiones.html"
+                    class="group relative overflow-hidden aspect-[4/5] bg-gray-100 shadow-sm fade-in flex flex-col justify-end">
+                    <img src="images/sesiones/sesiones_01.jpg" alt="Sesiones fotográficas y retrato" loading="lazy"
+                        class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent opacity-90 group-hover:opacity-75 transition-opacity">
+                    </div>
+                    <div class="relative z-10 p-6 text-white">
+                        <span
+                            class="text-[9px] uppercase tracking-[0.3em] font-bold text-white/70 block mb-2">Fotografía
+                            · Sesiones</span>
+                        <h3 class="text-xl font-sans font-bold uppercase tracking-wider mb-2">Retratos con Carácter</h3>
+                        <p class="text-xs font-serif italic text-white/80 line-clamp-2">Sesiones personalizadas.</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
 
     <!-- Social Proof Section -->
     <section class="pt-16 md:pt-20 pb-16 bg-gray-50 border-t border-zen-grey">
@@ -262,9 +434,43 @@
                 </div>
             </div>
         </div>
+    </section>
+
+    <!-- High-Impact Closing CTA -->
+    <section class="py-20 md:py-28 bg-white">
+        <div class="max-w-5xl mx-auto px-6">
+            <div class="bg-zen-dark text-white p-10 md:p-16 text-center shadow-2xl relative overflow-hidden fade-in">
+                <div class="absolute -top-24 -left-24 w-72 h-72 bg-white/5 rounded-full blur-3xl pointer-events-none">
+                </div>
+                <div
+                    class="absolute -bottom-24 -right-24 w-72 h-72 bg-white/5 rounded-full blur-3xl pointer-events-none">
+                </div>
+
+                <h2 class="text-xs md:text-sm tracking-[0.6em] font-sans font-bold text-gray-400 uppercase mb-4">
+                    ¿CREAMOS JUNTOS?</h2>
+                <p class="text-2xl md:text-4xl font-serif italic max-w-2xl mx-auto mb-6 leading-snug">
+                    Toda gran historia merece ser<br>captada con la emoción correcta.
+                </p>
+                <p class="text-xs md:text-sm text-gray-300 max-w-xl mx-auto mb-10 font-sans leading-relaxed">
+                    Cada proyecto es una oportunidad de crear algo único.<br>¿Tienes algo en mente? Me encantará
+                    escucharte.
+                </p>
+                <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                    <a href="contacto.html"
+                        class="w-full sm:w-auto bg-white text-zen-dark px-10 py-4 uppercase tracking-[0.3em] font-bold text-xs hover:bg-gray-100 transition-all shadow-lg">
+                        Enviar un Mensaje
+                    </a>
+                    <a href="https://api.whatsapp.com/send?phone=34677810523" target="_blank" rel="noopener noreferrer"
+                        class="w-full sm:w-auto flex items-center justify-center space-x-2 border border-white/40 px-8 py-4 uppercase tracking-[0.3em] font-bold text-xs hover:bg-white hover:text-zen-dark transition-all">
+                        <img src="images/RRSS/WhatsApp_icon.svg" alt="WhatsApp" class="h-4 w-auto invert">
+                        <span>WhatsApp Directo</span>
+                    </a>
+                </div>
+            </div>
         </div>
     </section>
 
+    <!-- Footer -->
     <footer class="py-16 border-t border-zen-grey bg-zen-dark text-white">
         <div class="max-w-7xl mx-auto px-6 text-center">
             <img src="images/logo_white.png" alt="Pausando el Tiempo" class="h-10 mx-auto mb-8">
@@ -291,7 +497,94 @@
         </div>
     </footer>
 
-    <script src="js/main.js?v=2.2"></script>
+    <!-- Video Modal for Home Page (Self-contained) -->
+    <div id="video-modal" class="fixed inset-0 bg-black/95 z-[100] hidden items-center justify-center p-4 md:p-8"
+        style="display: none;">
+        <button id="video-modal-close"
+            class="absolute top-6 right-6 text-white text-4xl leading-none hover:text-gray-300 transition-colors z-10"
+            aria-label="Cerrar vídeo">&times;</button>
+        <div class="video-modal-container relative w-full max-w-5xl aspect-video bg-black shadow-2xl overflow-hidden">
+            <iframe id="video-modal-iframe" src="" title="Reproductor de vídeo" class="w-full h-full" frameborder="0"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
+                allowfullscreen></iframe>
+        </div>
+    </div>
+
+    <!-- Video Modal Script for Home Page -->
+    <script>
+            (function () {
+                if (window._videoModalInitialized) return;
+                window._videoModalInitialized = true;
+
+                function initVideoModal() {
+                    var modal = document.getElementById('video-modal');
+                    var iframe = document.getElementById('video-modal-iframe');
+                    var closeBtn = document.getElementById('video-modal-close');
+                    var container = modal ? modal.querySelector('.video-modal-container') : null;
+
+                    if (!modal || !iframe) return;
+
+                    modal.style.display = 'none';
+                    modal.classList.remove('hidden');
+
+                    function openModal(url, isVertical) {
+                        if (container) {
+                            if (isVertical) {
+                                container.className = 'video-modal-container relative w-full max-w-[340px] md:max-w-[380px] aspect-[9/16] max-h-[85vh] bg-black shadow-2xl overflow-hidden rounded-md';
+                            } else {
+                                container.className = 'video-modal-container relative w-full max-w-5xl aspect-video bg-black shadow-2xl overflow-hidden';
+                            }
+                        }
+                        iframe.src = url;
+                        modal.style.display = 'flex';
+                        document.body.style.overflow = 'hidden';
+                    }
+
+                    function closeModal() {
+                        modal.style.display = 'none';
+                        iframe.src = '';
+                        document.body.style.overflow = '';
+                    }
+
+                    document.addEventListener('click', function (e) {
+                        var trigger = e.target.closest('.video-modal-trigger');
+                        if (trigger) {
+                            var url = trigger.getAttribute('data-video-url');
+                            var isVertical = trigger.getAttribute('data-aspect') === 'vertical';
+                            if (url) {
+                                e.preventDefault();
+                                e.stopPropagation();
+                                openModal(url, isVertical);
+                            }
+                        } else if (e.target === modal || e.target === closeBtn) {
+                            closeModal();
+                        }
+                    });
+
+                    if (closeBtn) {
+                        closeBtn.addEventListener('click', function (e) {
+                            e.stopPropagation();
+                            closeModal();
+                        });
+                    }
+
+                    window.addEventListener('keydown', function (e) {
+                        if (e.key === 'Escape' && modal.style.display === 'flex') {
+                            closeModal();
+                        }
+                    });
+                }
+
+                if (document.readyState === 'loading') {
+                    document.addEventListener('DOMContentLoaded', initVideoModal);
+                } else {
+                    initVideoModal();
+                }
+            })();
+    </script>
+
+    <script src="js/main.js?v=2.3"></script>
 </body>
 
 </html>
